@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>About Us - Astrowjyoti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-[#FFFDF9] text-gray-900 font-sans antialiased overflow-x-hidden">
+
+  <!-- Navbar Component -->
+  <div class="app-navbar"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative w-full overflow-hidden flex flex-col pt-10" style="min-height: 600px; background-color: #FFFDF9;">
+      
+      <!-- Background Image (Right side) -->
+      <div class="absolute inset-0 w-full h-full z-0 pointer-events-none flex justify-end">
+        <div class="w-full md:w-[65%] h-full relative">
+          <img src="/About-banner.png" alt="About Astrowjyoti" class="w-full h-full object-cover object-left" onerror="this.src='/Hero-banner.png';" />
+          <!-- Gradient overlay to fade the image into the background color -->
+          <div class="absolute inset-0 bg-gradient-to-r from-[#FFFDF9] via-[#FFFDF9]/80 to-transparent w-full md:w-[60%]"></div>
+        </div>
+      </div>
+      
+      <!-- Content Container -->
+      <div class="relative z-10 w-[90%] max-w-[1200px] mx-auto flex flex-col justify-center flex-1 pb-16 pt-8">
+        
+        <!-- Breadcrumbs -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="inline-flex items-center space-x-1 md:space-x-2 text-[13px] font-medium text-gray-500">
+            <li class="inline-flex items-center">
+              <a href="/" class="hover:text-orange-500 transition-colors">Home</a>
+            </li>
+            <li>
+              <div class="flex items-center">
+                <svg class="w-3 h-3 text-gray-400 mx-1" fill="none" viewBox="0 0 6 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <span class="ml-1 text-gray-800">About Us</span>
+              </div>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="w-full md:w-[60%] lg:w-[50%]">
+          <!-- Pill Badge -->
+          <div class="inline-block px-4 py-1.5 mb-6 border-2 rounded-full text-[11px] font-bold uppercase tracking-widest bg-white" style="border-color: #F2780C; color: #1E293B;">
+            ABOUT ASTROWJYOTI
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-[36px] md:text-[48px] lg:text-[54px] font-bold leading-tight mb-6" style="font-family: 'Playfair Display', serif; color: #0F172A;">
+            Guiding You Towards <br/>
+            <span style="color: #F97316;">a Brighter Tomorrow</span>
+          </h1>
+
+          <!-- Description -->
+          <p class="text-[15px] md:text-[16px] text-slate-700 leading-relaxed mb-8 max-w-[95%] font-medium">
+            At Astrowjyoti, we believe that ancient wisdom can bring clarity, confidence and positivity to modern life. Our mission is to make astrology accessible, authentic and trustworthy for everyone.
+          </p>
+
+          <!-- CTA Button -->
+          <a href="#" class="inline-flex items-center justify-center font-bold py-3.5 px-8 rounded-full transition duration-300 text-[15px] shadow-sm hover:shadow-md hover:-translate-y-0.5" style="background-color: #FACC15; color: #0F172A;">
+            Talk to an Astrologer &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Features Bar -->
+    <div class="relative z-20 w-[95%] max-w-[1200px] mx-auto -mt-16 mb-16 bg-white/95 backdrop-blur-md rounded-[20px] border border-gray-100 p-6 md:p-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
+        
+        <!-- Feature 1 -->
+        <div class="flex items-center gap-4 pt-4 sm:pt-0 sm:px-4 lg:px-6">
+          <div class="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center bg-orange-50 border border-orange-100">
+            <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <div>
+            <h4 class="text-[14px] font-bold text-slate-800 mb-0.5">Authentic Guidance</h4>
+            <p class="text-[12px] text-slate-500">Based on Vedic wisdom</p>
+          </div>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="flex items-center gap-4 pt-4 sm:pt-0 sm:px-4 lg:px-6">
+          <div class="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center bg-orange-50 border border-orange-100">
+            <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          </div>
+          <div>
+            <h4 class="text-[14px] font-bold text-slate-800 mb-0.5">Experienced Astrologers</h4>
+            <p class="text-[12px] text-slate-500">Verified and trusted experts</p>
+          </div>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="flex items-center gap-4 pt-4 sm:pt-0 sm:px-4 lg:px-6">
+          <div class="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center bg-orange-50 border border-orange-100">
+            <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4L15 4l-6-2-6 2v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V4l-6 2z"></path></svg>
+          </div>
+          <div>
+            <h4 class="text-[14px] font-bold text-slate-800 mb-0.5">100% Private & Secure</h4>
+            <p class="text-[12px] text-slate-500">Your data is safe with us</p>
+          </div>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="flex items-center gap-4 pt-4 sm:pt-0 sm:px-4 lg:px-6">
+          <div class="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center bg-orange-50 border border-orange-100">
+            <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          </div>
+          <div>
+            <h4 class="text-[14px] font-bold text-slate-800 mb-0.5">Personalised Solutions</h4>
+            <p class="text-[12px] text-slate-500">For love, career, health and more</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Component -->
+  <div class="app-footer"></div>
+
+  <!-- Component Script -->
+  <script src="/js/component.js"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

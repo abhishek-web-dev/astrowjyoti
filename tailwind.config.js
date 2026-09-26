@@ -4,7 +4,8 @@ export default {
     "./index.html",
     "./main.js",
     "./src/**/*.{js,ts,jsx,tsx,html}",
-    "./Consultations/**/*.html"
+    "./Consultations/**/*.html",
+    "./Astrology/**/*.html"
   ],
   theme: {
     extend: {
