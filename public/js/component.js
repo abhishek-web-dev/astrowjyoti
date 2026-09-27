@@ -63,7 +63,7 @@ const navbarHTML = `
   .mobile-accordion summary { list-style: none; outline: none; }
   .mobile-accordion[open] summary svg.chevron { transform: rotate(180deg); }
 </style>
-<nav class="bg-astro-white shadow-sm sticky top-0 z-50" style="position: sticky; top: 0; z-index: 50;">
+<nav class="bg-astro-white sticky top-0 z-50" style="position: sticky; top: 0; z-index: 50;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-20" style="height: 5rem;">
         <div class="flex items-center">
