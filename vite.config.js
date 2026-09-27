@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
 function getHtmlInputs() {
   const inputs = {};
   // The directories where your HTML files are located
-  const directories = ['.', 'Astrology', 'Consultations', 'services', 'Services'];
+  const directories = ['.', 'Astrology', 'Consultations', 'services', 'Services', 'Auth', 'Booking', 'Chat', 'Dashboard', 'Video'];
   
   directories.forEach(dir => {
     if (fs.existsSync(dir)) {
