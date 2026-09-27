@@ -1,27 +1,71 @@
 
 const navbarHTML = `
 <style>
-  /* Guaranteed Dropdown CSS (Bypasses Tailwind JIT omission for component.js) */
-  .nav-dropdown { position: relative; }
-  .nav-dropdown-content {
-    position: absolute; top: 100%; margin-top: 0.5rem;
+  /* Guaranteed Spacing and Layout (Bypasses Tailwind omission for component.js) */
+  @media (min-width: 768px) {
+    .desktop-nav-links { 
+      gap: 2rem; 
+      display: flex !important; 
+      align-items: stretch !important; 
+      height: 100%; 
+    }
+    .desktop-nav-links > a { 
+      display: flex; 
+      align-items: center; 
+    }
+  }
+
+  /* Hardcoded CTA Button to bypass Tailwind purge */
+  .nav-cta-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #ea580c;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    align-self: center;
+    height: max-content;
+  }
+  .nav-cta-btn:hover {
+    background-color: #c2410c;
+    transform: translateY(-2px);
+  }
+
+  /* Dropdown CSS (Flawless Hover & Click) */
+  .astro-dropdown { 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    outline: none; 
+    cursor: pointer;
+  }
+  .astro-dropdown > a { outline: none; }
+  .astro-dropdown:hover > a, .astro-dropdown:focus > a, .astro-dropdown:focus-within > a { color: #ea580c; }
+  .astro-dropdown-menu {
+    position: absolute; top: 100%; left: 0;
+    display: none;
     background-color: white; border-radius: 0.375rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    border: 1px solid #f3f4f6;
-    opacity: 0; visibility: hidden; transition: all 0.2s ease-in-out;
-    z-index: 50; min-width: 13rem;
+    border: 1px solid #f3f4f6; border-top: 3px solid #ea580c;
+    z-index: 50; min-width: 14rem;
   }
-  .nav-dropdown-left { left: 0; }
-  .nav-dropdown-right { right: 0; }
-  .nav-dropdown:hover .nav-dropdown-content { opacity: 1; visibility: visible; }
+  .astro-dropdown:hover .astro-dropdown-menu,
+  .astro-dropdown:focus .astro-dropdown-menu,
+  .astro-dropdown:focus-within .astro-dropdown-menu { 
+    display: block !important;
+  }
   
+  /* Mobile Accordion CSS */
   .mobile-accordion summary::-webkit-details-marker { display: none; }
   .mobile-accordion summary { list-style: none; outline: none; }
   .mobile-accordion[open] summary svg.chevron { transform: rotate(180deg); }
 </style>
-<nav class="bg-astro-white shadow-sm sticky top-0 z-50">
+<nav class="bg-astro-white shadow-sm sticky top-0 z-50" style="position: sticky; top: 0; z-index: 50;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-20">
+      <div class="flex justify-between h-20" style="height: 5rem;">
         <div class="flex items-center">
           <!-- Logo area -->
           <a href="/index.html" class="flex-shrink-0 flex items-center gap-3">
@@ -30,60 +74,58 @@ const navbarHTML = `
             <span class="font-bold text-2xl text-astro-orange tracking-tight">Astrowjyoti</span>
           </a>
         </div>
+        
         <!-- Desktop Menu -->
-        <div class="hidden md:flex md:items-center md:space-x-8">
-          <a href="/index.html"
-            class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">Home</a>
+        <div class="hidden md:flex md:items-center desktop-nav-links" style="height: 100%;">
+          <a href="/index.html" class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">Home</a>
             
           <!-- Astrology Dropdown -->
-          <div class="nav-dropdown">
-            <button class="flex items-center text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors cursor-pointer">
+          <div class="astro-dropdown" tabindex="0">
+            <a href="javascript:void(0)" class="flex items-center text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">
               Astrology
               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
-            <div class="nav-dropdown-content nav-dropdown-left">
+            </a>
+            <div class="astro-dropdown-menu">
               <div class="py-1" role="menu" aria-orientation="vertical">
-                <a href="/Astrology/Kundli.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Free Kundli</a>
-                <a href="/Astrology/Kundli-Matching.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Kundli Matching</a>
-                <a href="/Astrology/Daily-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Daily Horoscope</a>
-                <a href="/Astrology/Weekly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Weekly Horoscope</a>
-                <a href="/Astrology/Monthly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Monthly Horoscope</a>
-                <a href="/Astrology/Yearly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Yearly Horoscope</a>
-                <a href="/Astrology/Tarot-Reading.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Tarot Reading</a>
+                <a href="/Astrology/Kundli.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Free Kundli</a>
+                <a href="/Astrology/Kundli-Matching.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Kundli Matching</a>
+                <a href="/Astrology/Daily-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Daily Horoscope</a>
+                <a href="/Astrology/Weekly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Weekly Horoscope</a>
+                <a href="/Astrology/Monthly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Monthly Horoscope</a>
+                <a href="/Astrology/Yearly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Yearly Horoscope</a>
+                <a href="/Astrology/Tarot-Reading.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Tarot Reading</a>
               </div>
             </div>
           </div>
 
           <!-- Consultations Dropdown -->
-          <div class="nav-dropdown">
-            <button class="flex items-center text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors cursor-pointer">
+          <div class="astro-dropdown" tabindex="0">
+            <a href="javascript:void(0)" class="flex items-center text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">
               Consultations
               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
-            <div class="nav-dropdown-content nav-dropdown-left">
+            </a>
+            <div class="astro-dropdown-menu">
               <div class="py-1" role="menu" aria-orientation="vertical">
-                <a href="/Consultations/Chat-with-Astrologer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Chat with Astrologer</a>
-                <a href="/Consultations/Talk-to-Astrologer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Talk to Astrologer</a>
-                <a href="/Consultations/Video-Consultation.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Video Consultation</a>
+                <a href="/Consultations/Chat-with-Astrologer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Chat with Astrologer</a>
+                <a href="/Consultations/Talk-to-Astrologer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Talk to Astrologer</a>
+                <a href="/Consultations/Video-Consultation.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Video Consultation</a>
               </div>
             </div>
           </div>
 
-          <a href="/About.html"
-            class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">About Us</a>
+          <a href="/About.html" class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">About Us</a>
             
           <!-- Consult Astrologer Button -->
-          <a href="/Consultations/Talk-to-Astrologer.html" class="btn-primary">Consult Astrologer</a>
+          <a href="/Consultations/Talk-to-Astrologer.html" class="nav-cta-btn inline-block">Consult Astrologer</a>
         </div>
+        
         <!-- Mobile menu button -->
         <div class="flex items-center md:hidden">
           <button id="mobile-menu-btn" type="button"
             class="inline-flex items-center justify-center p-2 rounded-md text-astro-orange hover:text-astro-amber focus:outline-none"
             aria-controls="mobile-menu" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
-            <!-- Hamburger icon -->
-            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
@@ -124,10 +166,9 @@ const navbarHTML = `
           </div>
         </details>
 
-        <a href="/About.html"
-          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">About Us</a>
+        <a href="/About.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">About Us</a>
 
-        <a href="/Consultations/Talk-to-Astrologer.html" class="block w-full text-center mt-4 btn-primary">Consult Astrologer</a>
+        <a href="/Consultations/Talk-to-Astrologer.html" class="block w-full text-center mt-4 nav-cta-btn">Consult Astrologer</a>
       </div>
     </div>
   </nav>
