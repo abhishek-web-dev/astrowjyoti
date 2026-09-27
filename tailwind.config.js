@@ -5,7 +5,14 @@ export default {
     "./main.js",
     "./src/**/*.{js,ts,jsx,tsx,html}",
     "./Consultations/**/*.html",
-    "./Astrology/**/*.html"
+    "./Astrology/**/*.html",
+    "./Auth/**/*.html",
+    "./Dashboard/**/*.html",
+    "./Booking/**/*.html",
+    "./Chat/**/*.html",
+    "./Video/**/*.html",
+    "./Services/**/*.html",
+    "./services/**/*.html"
   ],
   theme: {
     extend: {

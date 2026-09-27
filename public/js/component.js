@@ -131,6 +131,23 @@ const navbarHTML = `
           </div>
 
           <a href="/About.html" class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">About Us</a>
+          
+          <!-- Language Selector -->
+          <div class="astro-dropdown" tabindex="0">
+            <a href="javascript:void(0)" class="flex items-center text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">
+              <span id="current-lang-desktop">English</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+            <div class="astro-dropdown-menu">
+              <div class="py-1" role="menu" aria-orientation="vertical">
+                <a href="javascript:void(0)" onclick="setLang('en', 'English')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">English</a>
+                <a href="javascript:void(0)" onclick="setLang('hi', 'हिंदी')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">हिंदी</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Login Link -->
+          <a href="/Auth/Login.html" class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">Login</a>
             
           <!-- Consult Astrologer Button -->
           <a href="/Consultations/Talk-to-Astrologer.html" class="nav-cta-btn inline-block">Consult Astrologer</a>
@@ -198,6 +215,18 @@ const navbarHTML = `
         </details>
 
         <a href="/About.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">About Us</a>
+
+        <!-- Mobile Language Selector -->
+        <div class="px-3 py-2 border-t border-gray-100 mt-2">
+          <label class="block text-sm font-medium text-gray-500 mb-1">Language</label>
+          <select id="mobile-lang" onchange="setLang(this.value, this.options[this.selectedIndex].text)" class="w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-2 text-base text-gray-700 focus:outline-none focus:border-[#EA580C]">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+          </select>
+        </div>
+
+        <!-- Mobile Login Link -->
+        <a href="/Auth/Login.html" class="block px-3 py-2 text-base font-bold text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">Login</a>
 
         <a href="/Consultations/Talk-to-Astrologer.html" class="block w-full text-center mt-4 nav-cta-btn">Consult Astrologer</a>
       </div>
@@ -387,4 +416,66 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.app-footer').forEach(el => {
     el.innerHTML = footerHTML;
   });
+
+  initLanguage();
 });
+
+// Google Translate Integration (Invisible UI)
+const style = document.createElement('style');
+style.innerHTML = `
+  .skiptranslate { display: none !important; }
+  body { top: 0px !important; }
+`;
+document.head.appendChild(style);
+
+const gtDiv = document.createElement('div');
+gtDiv.id = 'google_translate_element';
+gtDiv.style.display = 'none';
+document.body.appendChild(gtDiv);
+
+window.googleTranslateElementInit = function() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,hi',
+    autoDisplay: false
+  }, 'google_translate_element');
+};
+
+const script = document.createElement('script');
+script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+document.head.appendChild(script);
+
+window.setLang = function(langCode, langName) {
+  localStorage.setItem('astro_lang', langCode);
+  localStorage.setItem('astro_lang_name', langName);
+  
+  // Set Google Translate cookie directly for persistence
+  document.cookie = `googtrans=/en/${langCode}; path=/;`;
+  document.cookie = `googtrans=/en/${langCode}; domain=.${location.hostname}; path=/;`;
+
+  // Update Custom UI
+  const desk = document.getElementById('current-lang-desktop');
+  if (desk) desk.innerText = langName;
+  const mob = document.getElementById('mobile-lang');
+  if (mob) mob.value = langCode;
+
+  // Trigger translate on current page
+  let select = document.querySelector('.goog-te-combo');
+  if (select) {
+    select.value = langCode;
+    select.dispatchEvent(new Event('change'));
+  } else {
+    // Fallback: reload page to apply cookie
+    window.location.reload();
+  }
+};
+
+function initLanguage() {
+  const savedLang = localStorage.getItem('astro_lang') || 'en';
+  const savedName = localStorage.getItem('astro_lang_name') || 'English';
+  
+  const desk = document.getElementById('current-lang-desktop');
+  if (desk) desk.innerText = savedName;
+  const mob = document.getElementById('mobile-lang');
+  if (mob) mob.value = savedLang;
+}
