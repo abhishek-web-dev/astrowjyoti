@@ -1,11 +1,30 @@
 
 const navbarHTML = `
+<style>
+  /* Guaranteed Dropdown CSS (Bypasses Tailwind JIT omission for component.js) */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-content {
+    position: absolute; top: 100%; margin-top: 0.5rem;
+    background-color: white; border-radius: 0.375rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f3f4f6;
+    opacity: 0; visibility: hidden; transition: all 0.2s ease-in-out;
+    z-index: 50; min-width: 13rem;
+  }
+  .nav-dropdown-left { left: 0; }
+  .nav-dropdown-right { right: 0; }
+  .nav-dropdown:hover .nav-dropdown-content { opacity: 1; visibility: visible; }
+  
+  .mobile-accordion summary::-webkit-details-marker { display: none; }
+  .mobile-accordion summary { list-style: none; outline: none; }
+  .mobile-accordion[open] summary svg.chevron { transform: rotate(180deg); }
+</style>
 <nav class="bg-astro-white shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-20">
         <div class="flex items-center">
           <!-- Logo area -->
-          <a href="#" class="flex-shrink-0 flex items-center gap-3">
+          <a href="/index.html" class="flex-shrink-0 flex items-center gap-3">
             <img class="h-12 w-auto object-contain" src="/asset/logo.png" alt="Astrowjyoti Logo"
               onerror="this.src='https://placehold.co/100x40/ea580c/ffffff?text=LOGO'">
             <span class="font-bold text-2xl text-astro-orange tracking-tight">Astrowjyoti</span>
@@ -13,15 +32,48 @@ const navbarHTML = `
         </div>
         <!-- Desktop Menu -->
         <div class="hidden md:flex md:items-center md:space-x-8">
-          <a href="#"
+          <a href="/index.html"
             class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">Home</a>
-          <a href="#"
-            class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">Horoscope</a>
-          <a href="#"
-            class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">Services</a>
-          <a href="#"
+            
+          <!-- Astrology Dropdown -->
+          <div class="nav-dropdown">
+            <button class="flex items-center text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors cursor-pointer">
+              Astrology
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="nav-dropdown-content nav-dropdown-left">
+              <div class="py-1" role="menu" aria-orientation="vertical">
+                <a href="/Astrology/Kundli.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Free Kundli</a>
+                <a href="/Astrology/Kundli-Matching.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Kundli Matching</a>
+                <a href="/Astrology/Daily-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Daily Horoscope</a>
+                <a href="/Astrology/Weekly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Weekly Horoscope</a>
+                <a href="/Astrology/Monthly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Monthly Horoscope</a>
+                <a href="/Astrology/Yearly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Yearly Horoscope</a>
+                <a href="/Astrology/Tarot-Reading.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Tarot Reading</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Consultations Dropdown -->
+          <div class="nav-dropdown">
+            <button class="flex items-center text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors cursor-pointer">
+              Consultations
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="nav-dropdown-content nav-dropdown-left">
+              <div class="py-1" role="menu" aria-orientation="vertical">
+                <a href="/Consultations/Chat-with-Astrologer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Chat with Astrologer</a>
+                <a href="/Consultations/Talk-to-Astrologer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Talk to Astrologer</a>
+                <a href="/Consultations/Video-Consultation.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange">Video Consultation</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="/About.html"
             class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">About Us</a>
-          <a href="#" class="btn-primary">Consult Astrologer</a>
+            
+          <!-- Consult Astrologer Button -->
+          <a href="/Consultations/Talk-to-Astrologer.html" class="btn-primary">Consult Astrologer</a>
         </div>
         <!-- Mobile menu button -->
         <div class="flex items-center md:hidden">
@@ -40,17 +92,42 @@ const navbarHTML = `
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-astro-white border-t border-gray-100">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        <a href="#" class="block px-3 py-2 text-base font-medium text-astro-orange bg-astro-cream rounded-md">Home</a>
-        <a href="#"
-          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">Horoscope</a>
-        <a href="#"
-          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">Services</a>
-        <a href="#"
-          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">About
-          Us</a>
-        <a href="#" class="block w-full text-center mt-4 btn-primary">Consult Astrologer</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-astro-white border-t border-gray-100 max-h-screen overflow-y-auto">
+      <div class="px-2 pt-2 pb-6 space-y-1 sm:px-3">
+        <a href="/index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">Home</a>
+        
+        <details class="mobile-accordion group">
+          <summary class="flex justify-between items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md cursor-pointer">
+            Astrology
+            <svg class="chevron w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </summary>
+          <div class="pl-6 pb-2 space-y-1 bg-gray-50/50 rounded-b-md">
+            <a href="/Astrology/Kundli.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Free Kundli</a>
+            <a href="/Astrology/Kundli-Matching.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Kundli Matching</a>
+            <a href="/Astrology/Daily-Horoscope.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Daily Horoscope</a>
+            <a href="/Astrology/Weekly-Horoscope.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Weekly Horoscope</a>
+            <a href="/Astrology/Monthly-Horoscope.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Monthly Horoscope</a>
+            <a href="/Astrology/Yearly-Horoscope.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Yearly Horoscope</a>
+            <a href="/Astrology/Tarot-Reading.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Tarot Reading</a>
+          </div>
+        </details>
+
+        <details class="mobile-accordion group">
+          <summary class="flex justify-between items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md cursor-pointer">
+            Consultations
+            <svg class="chevron w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </summary>
+          <div class="pl-6 pb-2 space-y-1 bg-gray-50/50 rounded-b-md">
+            <a href="/Consultations/Chat-with-Astrologer.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Chat with Astrologer</a>
+            <a href="/Consultations/Talk-to-Astrologer.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Talk to Astrologer</a>
+            <a href="/Consultations/Video-Consultation.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Video Consultation</a>
+          </div>
+        </details>
+
+        <a href="/About.html"
+          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">About Us</a>
+
+        <a href="/Consultations/Talk-to-Astrologer.html" class="block w-full text-center mt-4 btn-primary">Consult Astrologer</a>
       </div>
     </div>
   </nav>
@@ -231,11 +308,11 @@ const footerHTML = `
 `;
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.app-navbar').forEach(el => {
-        el.innerHTML = navbarHTML;
-    });
-    
-    document.querySelectorAll('.app-footer').forEach(el => {
-        el.innerHTML = footerHTML;
-    });
+  document.querySelectorAll('.app-navbar').forEach(el => {
+    el.innerHTML = navbarHTML;
+  });
+
+  document.querySelectorAll('.app-footer').forEach(el => {
+    el.innerHTML = footerHTML;
+  });
 });
