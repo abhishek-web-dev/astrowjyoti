@@ -71,7 +71,7 @@ const navbarHTML = `
           <a href="/index.html" class="flex-shrink-0 flex items-center gap-3">
             <img class="h-12 w-auto object-contain" src="/asset/logo.png" alt="Astrowjyoti Logo"
               onerror="this.src='https://placehold.co/100x40/ea580c/ffffff?text=LOGO'">
-            <span class="font-bold text-2xl text-astro-orange tracking-tight">Astrowjyoti</span>
+            
           </a>
         </div>
         
@@ -94,6 +94,7 @@ const navbarHTML = `
                 <a href="/Astrology/Monthly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Monthly Horoscope</a>
                 <a href="/Astrology/Yearly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Yearly Horoscope</a>
                 <a href="/Astrology/Tarot-Reading.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Tarot Reading</a>
+                <a href="/Astrology/Numerology.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Numerology</a>
               </div>
             </div>
           </div>
@@ -109,6 +110,22 @@ const navbarHTML = `
                 <a href="/Consultations/Chat-with-Astrologer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Chat with Astrologer</a>
                 <a href="/Consultations/Talk-to-Astrologer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Talk to Astrologer</a>
                 <a href="/Consultations/Video-Consultation.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Video Consultation</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services Dropdown -->
+          <div class="astro-dropdown" tabindex="0">
+            <a href="javascript:void(0)" class="flex items-center text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">
+              Services
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+            <div class="astro-dropdown-menu">
+              <div class="py-1" role="menu" aria-orientation="vertical">
+                <a href="/Services/Free-Kundli.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Free Kundli</a>
+                <a href="/Services/Kundli-Matching.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Kundli Matching</a>
+                <a href="/Services/Compatibility.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Compatibility</a>
+                <a href="/Services/Tarot.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Tarot</a>
               </div>
             </div>
           </div>
@@ -151,6 +168,7 @@ const navbarHTML = `
             <a href="/Astrology/Monthly-Horoscope.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Monthly Horoscope</a>
             <a href="/Astrology/Yearly-Horoscope.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Yearly Horoscope</a>
             <a href="/Astrology/Tarot-Reading.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Tarot Reading</a>
+            <a href="/Astrology/Numerology.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Numerology</a>
           </div>
         </details>
 
@@ -163,6 +181,19 @@ const navbarHTML = `
             <a href="/Consultations/Chat-with-Astrologer.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Chat with Astrologer</a>
             <a href="/Consultations/Talk-to-Astrologer.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Talk to Astrologer</a>
             <a href="/Consultations/Video-Consultation.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Video Consultation</a>
+          </div>
+        </details>
+
+        <details class="mobile-accordion group">
+          <summary class="flex justify-between items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md cursor-pointer">
+            Services
+            <svg class="chevron w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </summary>
+          <div class="pl-6 pb-2 space-y-1 bg-gray-50/50 rounded-b-md">
+            <a href="/Services/Free-Kundli.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Free Kundli</a>
+            <a href="/Services/Kundli-Matching.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Kundli Matching</a>
+            <a href="/Services/Compatibility.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Compatibility</a>
+            <a href="/Services/Tarot.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Tarot</a>
           </div>
         </details>
 
