@@ -238,12 +238,12 @@ const footerHTML = `
 <footer class="bg-[#FFFDF9] pt-12 md:pt-16 pb-8 border-t border-orange-100">
     <div class="w-full px-4 md:px-[8%]">
 
-      <!-- Footer Top (5 columns) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-6 xl:gap-8 mb-12">
+      <!-- Footer Top (Responsive Grid) -->
+      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-12 gap-x-4 gap-y-10 lg:gap-6 xl:gap-8 mb-12">
 
-        <!-- Brand & Info (Takes 3 columns on large screens) -->
+        <!-- Brand & Info (Full width on mobile, 3 cols on desktop) -->
         <div
-          class="col-span-1 md:col-span-2 lg:col-span-3 pr-0 lg:pr-8 flex flex-col items-center md:items-start text-center md:text-left">
+          class="col-span-2 lg:col-span-3 pr-0 lg:pr-8 flex flex-col items-center md:items-start text-center md:text-left">
           <a href="#" class="inline-block mb-5">
             <img class="h-12 md:h-[52px] w-auto object-contain" src="/asset/logo.png" alt="Astrowjyoti Logo"
               onerror="this.src='https://placehold.co/100x40/ea580c/ffffff?text=LOGO'">
@@ -295,59 +295,59 @@ const footerHTML = `
           </div>
         </div>
 
-        <!-- Quick Links (col-span-2) -->
-        <div class="col-span-1 lg:col-span-2 text-center md:text-left mt-4 md:mt-0">
-          <h4 class="font-bold text-[15px] md:text-base text-gray-900 mb-4 md:mb-5">Quick Links</h4>
+        <!-- Quick Links (Half width on mobile) -->
+        <div class="col-span-1 lg:col-span-2 text-left mt-0">
+          <h4 class="font-bold text-[14px] sm:text-[15px] md:text-base text-gray-900 mb-3 md:mb-5">Quick Links</h4>
           <ul class="space-y-2 md:space-y-3">
-            <li><a href="#"
+            <li><a href="/index.html"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Home</a>
             </li>
-            <li><a href="#"
+            <li><a href="/Consultations/Talk-to-Astrologer.html"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Astrologers</a>
             </li>
-            <li><a href="#"
+            <li><a href="/Astrology/Daily-Horoscope.html"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Horoscope</a>
             </li>
-            <li><a href="#"
+            <li><a href="/Astrology/Kundli.html"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Kundli</a>
             </li>
             <li><a href="#"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Blog</a>
             </li>
-            <li><a href="#"
+            <li><a href="/About.html"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Contact
                 Us</a></li>
           </ul>
         </div>
 
-        <!-- Our Services (col-span-2) -->
-        <div class="col-span-1 lg:col-span-2 text-center md:text-left mt-4 md:mt-0">
-          <h4 class="font-bold text-[15px] md:text-base text-gray-900 mb-4 md:mb-5">Our Services</h4>
+        <!-- Our Services (Half width on mobile) -->
+        <div class="col-span-1 lg:col-span-2 text-left mt-0">
+          <h4 class="font-bold text-[14px] sm:text-[15px] md:text-base text-gray-900 mb-3 md:mb-5">Our Services</h4>
           <ul class="space-y-2 md:space-y-3">
-            <li><a href="#"
+            <li><a href="/Consultations/Talk-to-Astrologer.html"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Talk
                 to Astrologer</a></li>
-            <li><a href="#"
+            <li><a href="/Consultations/Chat-with-Astrologer.html"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Chat
                 Consultation</a></li>
-            <li><a href="#"
+            <li><a href="/Consultations/Video-Consultation.html"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Video
                 Call</a></li>
-            <li><a href="#"
+            <li><a href="/Astrology/Kundli-Matching.html"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Kundli
                 Matching</a></li>
-            <li><a href="#"
+            <li><a href="/Astrology/Numerology.html"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Numerology</a>
             </li>
-            <li><a href="#"
+            <li><a href="/Astrology/Tarot-Reading.html"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Tarot
                 Reading</a></li>
           </ul>
         </div>
 
-        <!-- Help & Support (col-span-2) -->
-        <div class="col-span-1 lg:col-span-2 text-center md:text-left mt-4 md:mt-0">
-          <h4 class="font-bold text-[15px] md:text-base text-gray-900 mb-4 md:mb-5">Help & Support</h4>
+        <!-- Help & Support (Half width on mobile) -->
+        <div class="col-span-1 lg:col-span-2 text-left mt-0">
+          <h4 class="font-bold text-[14px] sm:text-[15px] md:text-base text-gray-900 mb-3 md:mb-5">Help & Support</h4>
           <ul class="space-y-2 md:space-y-3">
             <li><a href="#"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">FAQ</a>
@@ -370,27 +370,23 @@ const footerHTML = `
           </ul>
         </div>
 
-        <!-- Newsletter (Takes 3 columns on large screens) -->
-        <div
-          class="col-span-1 md:col-span-2 lg:col-span-3 relative lg:pl-6 xl:pl-8 text-center md:text-left mt-6 md:mt-0">
+        <!-- Newsletter (Half width on mobile, stacks on very small screens) -->
+        <div class="col-span-1 md:col-span-2 lg:col-span-3 relative lg:pl-6 xl:pl-8 text-left mt-0">
           <!-- Subtle separator line for large screens -->
-          <div
-            class="hidden lg:block absolute left-0 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-orange-200 to-transparent">
-          </div>
+          <div class="hidden lg:block absolute left-0 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-orange-200 to-transparent"></div>
 
-          <h4 class="font-bold text-[15px] md:text-base text-gray-900 mb-2 md:mb-3">Subscribe to our Newsletter</h4>
-          <p class="text-gray-500 text-[12px] md:text-[13px] font-medium mb-4 md:mb-6 leading-relaxed">
+          <h4 class="font-bold text-[14px] sm:text-[15px] md:text-base text-gray-900 mb-2 md:mb-3">Newsletter</h4>
+          <p class="text-gray-500 text-[11px] sm:text-[12px] md:text-[13px] font-medium mb-4 md:mb-6 leading-relaxed">
             Get the latest updates, articles and offers.
           </p>
 
-          <form class="flex gap-2 max-w-sm mx-auto md:mx-0">
-            <input type="email" placeholder="Enter your email" required
-              class="flex-1 min-w-0 bg-white border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm focus:outline-none focus:border-[#F2780C] focus:ring-1 focus:ring-[#F2780C] placeholder:text-gray-400">
+          <form class="flex flex-col sm:flex-row gap-2 max-w-sm w-full mx-0">
+            <input type="email" placeholder="Email address" required
+              class="w-full min-w-0 bg-white border border-gray-200 rounded-lg px-2.5 py-2 sm:px-3.5 sm:py-2.5 text-[12px] sm:text-sm focus:outline-none focus:border-[#F2780C] focus:ring-1 focus:ring-[#F2780C] placeholder:text-gray-400">
             <button type="submit"
-              class="bg-[#F2780C] hover:bg-[#E66A00] text-white px-4 py-2.5 rounded-lg transition-colors flex items-center justify-center shrink-0">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
-                </path>
+              class="bg-[#F2780C] hover:bg-[#E66A00] text-white px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg transition-colors flex items-center justify-center shrink-0 w-full sm:w-auto">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>
             </button>
           </form>
@@ -418,6 +414,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   initLanguage();
+
+  // Fix: Bind mobile menu events AFTER the navbar is injected into the DOM
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking outside of it
+    document.addEventListener('click', (event) => {
+      if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  }
 });
 
 // Google Translate Integration (Invisible UI)
