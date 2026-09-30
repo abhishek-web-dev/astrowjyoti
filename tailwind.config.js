@@ -1,18 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
+    "./index.{html,php}",
     "./main.js",
-    "./src/**/*.{js,ts,jsx,tsx,html}",
-    "./Consultations/**/*.html",
-    "./Astrology/**/*.html",
-    "./Auth/**/*.html",
-    "./Dashboard/**/*.html",
-    "./Booking/**/*.html",
-    "./Chat/**/*.html",
-    "./Video/**/*.html",
-    "./Services/**/*.html",
-    "./services/**/*.html"
+    "./src/**/*.{js,ts,jsx,tsx,html,php}",
+    "./Consultations/**/*.{html,php}",
+    "./Astrology/**/*.{html,php}",
+    "./Auth/**/*.{html,php}",
+    "./Dashboard/**/*.{html,php}",
+    "./Booking/**/*.{html,php}",
+    "./Chat/**/*.{html,php}",
+    "./Video/**/*.{html,php}",
+    "./Services/**/*.{html,php}",
+    "./services/**/*.{html,php}",
+    "./Admin/**/*.{html,php}",
+    "./Components/**/*.{html,php}"
   ],
   theme: {
     extend: {

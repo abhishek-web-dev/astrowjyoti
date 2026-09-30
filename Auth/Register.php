@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Astrowjyoti</title>
+  <link rel="stylesheet" href="/src/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Custom segmented control styles to bypass Tailwind JIT */
+    .gender-btn {
+      transition: all 0.2s ease;
+      background-color: #f9fafb;
+    }
+    .gender-btn:hover {
+      background-color: #f3f4f6;
+    }
+    .gender-btn:has(input:checked) {
+      background-color: #FFF5EB;
+      border-color: #EA580C;
+      box-shadow: 0 0 0 1px #EA580C;
+    }
+    .gender-btn:has(input:checked) span {
+      color: #EA580C;
+      font-weight: 700;
+    }
+    .gender-btn:has(input:checked) svg {
+      color: #EA580C;
+    }
+  </style>
+</head>
+
+<body class="bg-[#FFFDF9] font-sans antialiased text-gray-800 flex flex-col min-h-screen">
+
+  <!-- Navbar Component -->
+  <div class="app-navbar"></div>
+
+  <main class="flex-grow flex flex-col relative">
+    
+    <!-- Hero Background Section -->
+    <section class="w-full relative flex-grow flex items-center justify-center bg-cover bg-center overflow-visible md:overflow-hidden py-8 md:py-4"
+      style="background-image: url('/Auth/Register-banner.png'); min-height: calc(100vh - 80px);">
+      
+      <!-- Gradient overlay removed as requested -->
+      
+      <div class="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Bulletproof flex layout bypassing Tailwind JIT compilation bugs -->
+        <div class="flex flex-col md:flex-row gap-8 lg:gap-16 items-center justify-center md:justify-between w-full">
+          
+          <!-- Left Column: Content -->
+          <div class="hidden md:flex w-full flex-1 flex-col justify-center" style="padding-left: calc(max(20px, 8vw) + 200px);">
+            
+            <h1 class="text-4xl md:text-5xl lg:text-[56px] font-extrabold text-[#1E293B] leading-[1.15] mb-4" 
+                style="font-family: 'Playfair Display', serif;">
+              Create Your Account with <br />
+              <span class="text-[#EA580C]">Astrowjyoti</span>
+            </h1>
+            
+            <p class="text-slate-600 text-[15px] md:text-[16px] mb-8 leading-relaxed max-w-[480px]">
+              Join our growing community and get personalised astrology guidance from expert astrologers.
+            </p>
+            
+            <!-- Features List -->
+            <div class="space-y-4 mb-8 max-w-[480px]">
+              
+              <!-- Feature 1 -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-[#FFF5EB] flex items-center justify-center shrink-0 shadow-sm border border-orange-100">
+                  <svg class="w-6 h-6 text-[#EA580C]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-slate-900 font-bold text-[16px]">Personalised Guidance</h3>
+                  <p class="text-slate-500 text-[14px] mt-0.5">Get solutions for love, career, finance and more.</p>
+                </div>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-[#FFF5EB] flex items-center justify-center shrink-0 shadow-sm border border-orange-100">
+                  <svg class="w-6 h-6 text-[#EA580C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-slate-900 font-bold text-[16px]">Connect with Expert Astrologers</h3>
+                  <p class="text-slate-500 text-[14px] mt-0.5">Chat, call or video consultation anytime.</p>
+                </div>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-[#FFF5EB] flex items-center justify-center shrink-0 shadow-sm border border-orange-100">
+                  <svg class="w-6 h-6 text-[#EA580C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-slate-900 font-bold text-[16px]">Safe & Secure Platform</h3>
+                  <p class="text-slate-500 text-[14px] mt-0.5">Your data and privacy are always protected.</p>
+                </div>
+              </div>
+
+              <!-- Feature 4 -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-[#FFF5EB] flex items-center justify-center shrink-0 shadow-sm border border-orange-100">
+                  <svg class="w-6 h-6 text-[#EA580C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-slate-900 font-bold text-[16px]">Join 1M+ Happy Users</h3>
+                  <p class="text-slate-500 text-[14px] mt-0.5">Trusted by people seeking accurate guidance.</p>
+                </div>
+              </div>
+              
+            </div>
+
+
+          </div>
+
+          <!-- Right Column: Register Card -->
+          <div class="w-full shrink-0 relative" style="max-width: 580px;">
+            
+            <div class="bg-white rounded-[32px] p-6 sm:p-8 shadow-xl border border-gray-100 relative overflow-hidden">
+              
+              <!-- Card Header -->
+              <div class="text-center mb-6">
+                <h2 class="text-3xl font-extrabold text-[#111827] mb-2" style="font-family: 'Playfair Display', serif;">
+                  Create Your Account
+                </h2>
+                <p class="text-slate-500 text-[14.5px]">
+                  Sign up to start your spiritual journey with personalised astrology services.
+                </p>
+              </div>
+
+              <!-- Register Form -->
+              <form id="registerForm" style="display: flex; flex-direction: column; gap: 12px;">
+                <div id="registerError" class="hidden text-red-600 text-sm bg-red-50 p-3 rounded-lg"></div>
+                <div id="registerSuccess" class="hidden text-green-600 text-sm bg-green-50 p-3 rounded-lg"></div>
+                <!-- Name & Email Row -->
+                <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                  <!-- Full Name -->
+                  <div style="flex: 1 1 200px;">
+                    <label for="fullname" class="block text-[13px] font-bold text-slate-800 mb-1.5">Full Name</label>
+                    <div class="relative">
+                      <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none" style="padding-left: 14px;">
+                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                      </div>
+                      <input type="text" id="fullname" name="fullname" 
+                        class="block w-full border border-gray-200 rounded-xl text-slate-900 text-[14px] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                        style="padding: 10px 14px 10px 42px;"
+                        placeholder="Enter your full name" required>
+                    </div>
+                  </div>
+
+                  <!-- Email -->
+                  <div style="flex: 1 1 200px;">
+                    <label for="email" class="block text-[13px] font-bold text-slate-800 mb-1.5">Email Address</label>
+                    <div class="relative">
+                      <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none" style="padding-left: 14px;">
+                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <input type="email" id="email" name="email" autocomplete="username"
+                        class="block w-full border border-gray-200 rounded-xl text-slate-900 text-[14px] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                        style="padding: 10px 14px 10px 42px;"
+                        placeholder="Enter your email address" required>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Mobile -->
+                <div>
+                  <label class="block text-[13px] font-bold text-slate-800 mb-1.5">Mobile Number</label>
+                  <div class="flex">
+                    <div class="relative flex items-center border border-gray-200 border-r-0 rounded-l-xl bg-gray-50 px-3 shrink-0" style="padding-top: 10px; padding-bottom: 10px;">
+                      <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      <select class="bg-transparent text-[14px] font-medium text-slate-700 focus:outline-none ml-1 cursor-pointer">
+                        <option>+91</option>
+                      </select>
+                    </div>
+                    <input type="tel" id="phone" name="phone" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" title="Please enter a valid 10-digit mobile number" 
+                      class="block w-full border border-gray-200 rounded-r-xl text-slate-900 text-[14px] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all" 
+                      style="padding: 10px 14px;" placeholder="Enter your mobile number" required oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)">
+                  </div>
+                </div>
+
+                <!-- Passwords -->
+                <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+                  <!-- Password -->
+                  <div style="flex: 1 1 200px;">
+                    <label class="block text-[13px] font-bold text-slate-800 mb-1.5">Password</label>
+                    <div class="relative">
+                      <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none" style="padding-left: 14px;">
+                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                      </div>
+                      <input type="password" id="password" autocomplete="new-password"
+                        class="block w-full border border-gray-200 rounded-xl text-slate-900 text-[14px] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                        style="padding: 10px 42px 10px 42px;" placeholder="Create a password" required>
+                      <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none" style="padding-right: 14px;">
+                        <svg id="eyeIcon" class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Confirm Password -->
+                  <div style="flex: 1 1 200px;">
+                    <label class="block text-[13px] font-bold text-slate-800 mb-1.5">Confirm Password</label>
+                    <div class="relative">
+                      <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none" style="padding-left: 14px;">
+                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                      </div>
+                      <input type="password" id="confirmPassword" autocomplete="new-password"
+                        class="block w-full border border-gray-200 rounded-xl text-slate-900 text-[14px] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                        style="padding: 10px 42px 10px 42px;" placeholder="Confirm your password" required>
+                      <button type="button" id="toggleConfirmPassword" class="absolute inset-y-0 right-0 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none" style="padding-right: 14px;">
+                        <svg id="eyeIconConfirm" class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Date & Time -->
+                <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+                  <!-- DOB -->
+                  <div style="flex: 1 1 200px;">
+                    <label class="block text-[13px] font-bold text-slate-800 mb-1.5">Date of Birth <span class="text-gray-400 font-normal">(Optional)</span></label>
+                    <div class="relative">
+                      <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none" style="padding-left: 14px;">
+                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <input type="date" id="dob" name="dob"
+                        class="block w-full border border-gray-200 rounded-xl text-slate-900 text-[14px] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                        style="padding: 10px 14px 10px 42px;">
+                    </div>
+                  </div>
+                  <!-- TOB -->
+                  <div style="flex: 1 1 200px;">
+                    <label class="block text-[13px] font-bold text-slate-800 mb-1.5">Time of Birth <span class="text-gray-400 font-normal">(Optional)</span></label>
+                    <div class="relative">
+                      <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none" style="padding-left: 14px;">
+                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <input type="time" id="tob" name="tob"
+                        class="block w-full border border-gray-200 rounded-xl text-slate-900 text-[14px] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                        style="padding: 10px 14px 10px 42px;">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Gender -->
+                <div>
+                  <label class="block text-[13px] font-bold text-slate-800 mb-1.5">Gender <span class="text-gray-400 font-normal">(Optional)</span></label>
+                  <div style="display: flex; gap: 12px; width: 100%;">
+                    <label class="gender-btn flex items-center justify-center gap-2 border border-gray-200 rounded-xl py-2 cursor-pointer" style="flex: 1;">
+                      <input type="radio" name="gender" value="male" class="hidden">
+                      <svg class="w-4 h-4 text-slate-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                      <span class="text-[13px] font-medium text-slate-600 transition-colors">Male</span>
+                    </label>
+                    <label class="gender-btn flex items-center justify-center gap-2 border border-gray-200 rounded-xl py-2 cursor-pointer" style="flex: 1;">
+                      <input type="radio" name="gender" value="female" class="hidden">
+                      <svg class="w-4 h-4 text-slate-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                      <span class="text-[13px] font-medium text-slate-600 transition-colors">Female</span>
+                    </label>
+                    <label class="gender-btn flex items-center justify-center gap-2 border border-gray-200 rounded-xl py-2 cursor-pointer" style="flex: 1;">
+                      <input type="radio" name="gender" value="other" class="hidden">
+                      <svg class="w-4 h-4 text-slate-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                      <span class="text-[13px] font-medium text-slate-600 transition-colors">Other</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Terms -->
+                <div class="flex items-start gap-2 pt-2 pb-1">
+                  <input type="checkbox" id="terms" class="mt-1" required>
+                  <label for="terms" class="text-[13px] text-gray-600 leading-tight">
+                    I agree to the <a href="#" class="font-bold text-[#EA580C] hover:underline">Terms & Conditions</a> and <a href="#" class="font-bold text-[#EA580C] hover:underline">Privacy Policy</a>
+                  </label>
+                </div>
+
+                <button type="submit" 
+                  class="w-full flex items-center justify-center gap-2 bg-[#EA580C] text-white py-3 px-4 rounded-xl font-bold text-[15px] hover:bg-orange-700 hover:shadow-md transition-all">
+                  Create Account 
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </button>
+              </form>
+              <!-- Verification State -->
+              <div id="verifyState" class="hidden text-center py-6">
+                <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Check your email</h3>
+                <p class="text-gray-600 mb-6">We've sent a verification link to <br><strong id="verifyEmailDisplay" class="text-gray-900"></strong>.</p>
+                
+                <button id="resendBtn" class="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 py-3 px-4 rounded-xl font-bold text-[15px] hover:bg-gray-50 transition-all mb-4">
+                  Resend Verification Email
+                </button>
+                <p id="resendMessage" class="text-sm text-green-600 hidden"></p>
+                <p id="resendError" class="text-sm text-red-600 hidden"></p>
+
+                <p class="text-sm text-gray-500 mt-6">
+                  Once verified, you can <a href="Login" class="text-[#EA580C] font-bold hover:underline">Login here</a>.
+                </p>
+              </div>
+
+
+              <!-- Sign In Link -->
+              <p class="text-center text-slate-600 text-[14px] mt-6">
+                Already have an account? 
+                <a href="Login" class="font-bold text-[#EA580C] hover:text-orange-700 ml-1 transition-colors">Login</a>
+              </p>
+
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Component Script -->
+  <script src="/js/api.js"></script>
+  <script src="/js/component.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('registerForm');
+      const errorDiv = document.getElementById('registerError');
+      const successDiv = document.getElementById('registerSuccess');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const btnText = submitBtn.innerHTML;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        errorDiv.classList.add('hidden');
+        successDiv.classList.add('hidden');
+        
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (password !== confirmPassword) {
+          errorDiv.textContent = 'Passwords do not match';
+          errorDiv.classList.remove('hidden');
+          return;
+        }
+
+        const phoneVal = document.getElementById('phone').value.replace(/[^0-9]/g, '');
+        if (phoneVal.length !== 10) {
+          errorDiv.textContent = 'Please enter a valid 10-digit mobile number.';
+          errorDiv.classList.remove('hidden');
+          return;
+        }
+
+        submitBtn.innerHTML = 'Creating Account...';
+        submitBtn.disabled = true;
+
+        const genderEl = form.querySelector('input[name="gender"]:checked');
+        const payload = {
+          name: document.getElementById('fullname').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          password: password,
+          phone: phoneVal,
+          gender: genderEl ? genderEl.value : null,
+          date_of_birth: document.getElementById('dob') ? document.getElementById('dob').value : null
+        };
+
+        try {
+          const res = await window.api.post('/auth/register', payload);
+          
+          if (res && res.message) {
+            successDiv.textContent = res.message + " Redirecting...";
+            successDiv.classList.remove('hidden');
+            setTimeout(() => {
+              window.location.href = `/Auth/OTP-Verification?mode=registration&email=${encodeURIComponent(payload.email)}`;
+            }, 1000);
+          }
+        } catch (error) {
+          errorDiv.textContent = error.message || 'Registration failed';
+          errorDiv.classList.remove('hidden');
+          submitBtn.innerHTML = btnText;
+          submitBtn.disabled = false;
+        }
+      });
+    });
+  </script>
+  <!-- Password Toggle Script -->
+  <script>
+    function setupPasswordToggle(toggleId, inputId, iconId) {
+      const toggle = document.getElementById(toggleId);
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+
+      if (toggle && input && icon) {
+        toggle.addEventListener('click', function () {
+          const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+          input.setAttribute('type', type);
+          
+          if (type === 'text') {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />';
+          } else {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />';
+          }
+        });
+      }
+    }
+
+    setupPasswordToggle('togglePassword', 'password', 'eyeIcon');
+    setupPasswordToggle('toggleConfirmPassword', 'confirmPassword', 'eyeIconConfirm');
+  </script>
+</body>
+</html>

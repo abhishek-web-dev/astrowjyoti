@@ -4,7 +4,7 @@ const navbarHTML = `
   /* Guaranteed Spacing and Layout (Bypasses Tailwind omission for component.js) */
   @media (min-width: 768px) {
     .desktop-nav-links { 
-      gap: 2rem; 
+      gap: 1rem; 
       display: flex !important; 
       align-items: stretch !important; 
       height: 100%; 
@@ -14,20 +14,33 @@ const navbarHTML = `
       align-items: center; 
     }
   }
+  @media (min-width: 1024px) {
+    .desktop-nav-links {
+      gap: 1.5rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .desktop-nav-links {
+      gap: 2rem;
+    }
+  }
 
   /* Hardcoded CTA Button to bypass Tailwind purge */
   .nav-cta-btn {
-    padding: 0.75rem 1.5rem;
+    padding: 0 1.25rem;
+    height: 44px;
     background-color: #ea580c;
     color: #ffffff;
     font-weight: 600;
+    font-size: 0.875rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    white-space: nowrap;
     align-self: center;
-    height: max-content;
   }
   .nav-cta-btn:hover {
     background-color: #c2410c;
@@ -52,9 +65,7 @@ const navbarHTML = `
     border: 1px solid #f3f4f6; border-top: 3px solid #ea580c;
     z-index: 50; min-width: 14rem;
   }
-  .astro-dropdown:hover .astro-dropdown-menu,
-  .astro-dropdown:focus .astro-dropdown-menu,
-  .astro-dropdown:focus-within .astro-dropdown-menu { 
+  .astro-dropdown-menu.show {
     display: block !important;
   }
   
@@ -68,7 +79,7 @@ const navbarHTML = `
       <div class="flex justify-between h-20" style="height: 5rem;">
         <div class="flex items-center">
           <!-- Logo area -->
-          <a href="/index.html" class="flex-shrink-0 flex items-center gap-3">
+          <a href="/index" class="flex-shrink-0 flex items-center gap-3">
             <img class="h-12 w-auto object-contain" src="/asset/logo.png" alt="Astrowjyoti Logo"
               onerror="this.src='https://placehold.co/100x40/ea580c/ffffff?text=LOGO'">
             
@@ -77,7 +88,7 @@ const navbarHTML = `
         
         <!-- Desktop Menu -->
         <div class="hidden md:flex md:items-center desktop-nav-links" style="height: 100%;">
-          <a href="/index.html" class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">Home</a>
+          <a href="/index" class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">Home</a>
             
           <!-- Astrology Dropdown -->
           <div class="astro-dropdown" tabindex="0">
@@ -87,14 +98,14 @@ const navbarHTML = `
             </a>
             <div class="astro-dropdown-menu">
               <div class="py-1" role="menu" aria-orientation="vertical">
-                <a href="/Astrology/Kundli.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Free Kundli</a>
-                <a href="/Astrology/Kundli-Matching.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Kundli Matching</a>
-                <a href="/Astrology/Daily-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Daily Horoscope</a>
-                <a href="/Astrology/Weekly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Weekly Horoscope</a>
-                <a href="/Astrology/Monthly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Monthly Horoscope</a>
-                <a href="/Astrology/Yearly-Horoscope.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Yearly Horoscope</a>
-                <a href="/Astrology/Tarot-Reading.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Tarot Reading</a>
-                <a href="/Astrology/Numerology.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Numerology</a>
+                <a href="/Astrology/Kundli" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Free Kundli</a>
+                <a href="/Astrology/Kundli-Matching" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Kundli Matching</a>
+                <a href="/Astrology/Daily-Horoscope" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Daily Horoscope</a>
+                <a href="/Astrology/Weekly-Horoscope" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Weekly Horoscope</a>
+                <a href="/Astrology/Monthly-Horoscope" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Monthly Horoscope</a>
+                <a href="/Astrology/Yearly-Horoscope" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Yearly Horoscope</a>
+                <a href="/Astrology/Tarot-Reading" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Tarot Reading</a>
+                <a href="/Astrology/Numerology" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Numerology</a>
               </div>
             </div>
           </div>
@@ -107,9 +118,9 @@ const navbarHTML = `
             </a>
             <div class="astro-dropdown-menu">
               <div class="py-1" role="menu" aria-orientation="vertical">
-                <a href="/Consultations/Chat-with-Astrologer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Chat with Astrologer</a>
-                <a href="/Consultations/Talk-to-Astrologer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Talk to Astrologer</a>
-                <a href="/Consultations/Video-Consultation.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Video Consultation</a>
+                <a href="/Consultations/Chat-with-Astrologer" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Chat with Astrologer</a>
+                <a href="/Consultations/Talk-to-Astrologer" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Talk to Astrologer</a>
+                <a href="/Consultations/Video-Consultation" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Video Consultation</a>
               </div>
             </div>
           </div>
@@ -122,15 +133,15 @@ const navbarHTML = `
             </a>
             <div class="astro-dropdown-menu">
               <div class="py-1" role="menu" aria-orientation="vertical">
-                <a href="/Services/Free-Kundli.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Free Kundli</a>
-                <a href="/Services/Kundli-Matching.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Kundli Matching</a>
-                <a href="/Services/Compatibility.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Compatibility</a>
-                <a href="/Services/Tarot.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Tarot</a>
+                <a href="/Services/Free-Kundli" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Free Kundli</a>
+                <a href="/Services/Kundli-Matching" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Kundli Matching</a>
+                <a href="/Services/Compatibility" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Compatibility</a>
+                <a href="/Services/Tarot" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Tarot</a>
               </div>
             </div>
           </div>
 
-          <a href="/About.html" class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">About Us</a>
+          <a href="/About" class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">About Us</a>
           
           <!-- Language Selector -->
           <div class="astro-dropdown" tabindex="0">
@@ -146,11 +157,13 @@ const navbarHTML = `
             </div>
           </div>
 
-          <!-- Login Link -->
-          <a href="/Auth/Login.html" class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">Login</a>
+          <!-- Auth Container Desktop -->
+          <div id="desktop-auth-container" class="flex items-center">
+            <a href="/Auth/Login" class="text-gray-600 hover:text-astro-orange px-3 py-2 text-sm font-medium transition-colors">Login</a>
+          </div>
             
           <!-- Consult Astrologer Button -->
-          <a href="/Consultations/Talk-to-Astrologer.html" class="nav-cta-btn inline-block">Consult Astrologer</a>
+          <a href="/Consultations/Talk-to-Astrologer" class="nav-cta-btn inline-block">Consult Astrologer</a>
         </div>
         
         <!-- Mobile menu button -->
@@ -170,7 +183,7 @@ const navbarHTML = `
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-astro-white border-t border-gray-100 max-h-screen overflow-y-auto">
       <div class="px-2 pt-2 pb-6 space-y-1 sm:px-3">
-        <a href="/index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">Home</a>
+        <a href="/index" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">Home</a>
         
         <details class="mobile-accordion group">
           <summary class="flex justify-between items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md cursor-pointer">
@@ -178,14 +191,14 @@ const navbarHTML = `
             <svg class="chevron w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </summary>
           <div class="pl-6 pb-2 space-y-1 bg-gray-50/50 rounded-b-md">
-            <a href="/Astrology/Kundli.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Free Kundli</a>
-            <a href="/Astrology/Kundli-Matching.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Kundli Matching</a>
-            <a href="/Astrology/Daily-Horoscope.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Daily Horoscope</a>
-            <a href="/Astrology/Weekly-Horoscope.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Weekly Horoscope</a>
-            <a href="/Astrology/Monthly-Horoscope.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Monthly Horoscope</a>
-            <a href="/Astrology/Yearly-Horoscope.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Yearly Horoscope</a>
-            <a href="/Astrology/Tarot-Reading.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Tarot Reading</a>
-            <a href="/Astrology/Numerology.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Numerology</a>
+            <a href="/Astrology/Kundli" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Free Kundli</a>
+            <a href="/Astrology/Kundli-Matching" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Kundli Matching</a>
+            <a href="/Astrology/Daily-Horoscope" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Daily Horoscope</a>
+            <a href="/Astrology/Weekly-Horoscope" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Weekly Horoscope</a>
+            <a href="/Astrology/Monthly-Horoscope" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Monthly Horoscope</a>
+            <a href="/Astrology/Yearly-Horoscope" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Yearly Horoscope</a>
+            <a href="/Astrology/Tarot-Reading" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Tarot Reading</a>
+            <a href="/Astrology/Numerology" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Numerology</a>
           </div>
         </details>
 
@@ -195,9 +208,9 @@ const navbarHTML = `
             <svg class="chevron w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </summary>
           <div class="pl-6 pb-2 space-y-1 bg-gray-50/50 rounded-b-md">
-            <a href="/Consultations/Chat-with-Astrologer.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Chat with Astrologer</a>
-            <a href="/Consultations/Talk-to-Astrologer.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Talk to Astrologer</a>
-            <a href="/Consultations/Video-Consultation.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Video Consultation</a>
+            <a href="/Consultations/Chat-with-Astrologer" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Chat with Astrologer</a>
+            <a href="/Consultations/Talk-to-Astrologer" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Talk to Astrologer</a>
+            <a href="/Consultations/Video-Consultation" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Video Consultation</a>
           </div>
         </details>
 
@@ -207,14 +220,14 @@ const navbarHTML = `
             <svg class="chevron w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </summary>
           <div class="pl-6 pb-2 space-y-1 bg-gray-50/50 rounded-b-md">
-            <a href="/Services/Free-Kundli.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Free Kundli</a>
-            <a href="/Services/Kundli-Matching.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Kundli Matching</a>
-            <a href="/Services/Compatibility.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Compatibility</a>
-            <a href="/Services/Tarot.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Tarot</a>
+            <a href="/Services/Free-Kundli" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Free Kundli</a>
+            <a href="/Services/Kundli-Matching" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Kundli Matching</a>
+            <a href="/Services/Compatibility" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Compatibility</a>
+            <a href="/Services/Tarot" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Tarot</a>
           </div>
         </details>
 
-        <a href="/About.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">About Us</a>
+        <a href="/About" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">About Us</a>
 
         <!-- Mobile Language Selector -->
         <div class="px-3 py-2 border-t border-gray-100 mt-2">
@@ -225,10 +238,12 @@ const navbarHTML = `
           </select>
         </div>
 
-        <!-- Mobile Login Link -->
-        <a href="/Auth/Login.html" class="block px-3 py-2 text-base font-bold text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">Login</a>
+        <!-- Auth Container Mobile -->
+        <div id="mobile-auth-container">
+          <a href="/Auth/Login" class="block px-3 py-2 text-base font-bold text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md">Login</a>
+        </div>
 
-        <a href="/Consultations/Talk-to-Astrologer.html" class="block w-full text-center mt-4 nav-cta-btn">Consult Astrologer</a>
+        <a href="/Consultations/Talk-to-Astrologer" class="block w-full text-center mt-4 nav-cta-btn">Consult Astrologer</a>
       </div>
     </div>
   </nav>
@@ -299,22 +314,22 @@ const footerHTML = `
         <div class="col-span-1 lg:col-span-2 text-left mt-0">
           <h4 class="font-bold text-[14px] sm:text-[15px] md:text-base text-gray-900 mb-3 md:mb-5">Quick Links</h4>
           <ul class="space-y-2 md:space-y-3">
-            <li><a href="/index.html"
+            <li><a href="/index"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Home</a>
             </li>
-            <li><a href="/Consultations/Talk-to-Astrologer.html"
+            <li><a href="/Consultations/Talk-to-Astrologer"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Astrologers</a>
             </li>
-            <li><a href="/Astrology/Daily-Horoscope.html"
+            <li><a href="/Astrology/Daily-Horoscope"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Horoscope</a>
             </li>
-            <li><a href="/Astrology/Kundli.html"
+            <li><a href="/Astrology/Kundli"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Kundli</a>
             </li>
             <li><a href="#"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Blog</a>
             </li>
-            <li><a href="/About.html"
+            <li><a href="/About"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Contact
                 Us</a></li>
           </ul>
@@ -324,22 +339,22 @@ const footerHTML = `
         <div class="col-span-1 lg:col-span-2 text-left mt-0">
           <h4 class="font-bold text-[14px] sm:text-[15px] md:text-base text-gray-900 mb-3 md:mb-5">Our Services</h4>
           <ul class="space-y-2 md:space-y-3">
-            <li><a href="/Consultations/Talk-to-Astrologer.html"
+            <li><a href="/Consultations/Talk-to-Astrologer"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Talk
                 to Astrologer</a></li>
-            <li><a href="/Consultations/Chat-with-Astrologer.html"
+            <li><a href="/Consultations/Chat-with-Astrologer"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Chat
                 Consultation</a></li>
-            <li><a href="/Consultations/Video-Consultation.html"
+            <li><a href="/Consultations/Video-Consultation"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Video
                 Call</a></li>
-            <li><a href="/Astrology/Kundli-Matching.html"
+            <li><a href="/Astrology/Kundli-Matching"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Kundli
                 Matching</a></li>
-            <li><a href="/Astrology/Numerology.html"
+            <li><a href="/Astrology/Numerology"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Numerology</a>
             </li>
-            <li><a href="/Astrology/Tarot-Reading.html"
+            <li><a href="/Astrology/Tarot-Reading"
                 class="text-gray-600 hover:text-[#F2780C] text-[13px] md:text-[14px] font-medium transition-colors">Tarot
                 Reading</a></li>
           </ul>
@@ -415,6 +430,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initLanguage();
 
+  // Centralized Dropdown State Manager
+  window.activeDropdown = null;
+  window.closeAllDropdowns = function() {
+    document.querySelectorAll('.astro-dropdown-menu.show').forEach(menu => {
+      menu.classList.remove('show');
+    });
+    window.activeDropdown = null;
+  };
+
+  // Event Delegation for dropdown triggers and click outside
+  document.addEventListener('click', (e) => {
+    // Check if clicked on a dropdown trigger
+    const trigger = e.target.closest('.astro-dropdown > a');
+    if (trigger) {
+      e.preventDefault();
+      e.stopPropagation();
+      const parent = trigger.parentElement;
+      const menu = parent.querySelector('.astro-dropdown-menu');
+      if (menu) {
+        if (menu.classList.contains('show')) {
+          menu.classList.remove('show');
+          window.activeDropdown = null;
+        } else {
+          window.closeAllDropdowns();
+          menu.classList.add('show');
+          window.activeDropdown = parent;
+        }
+      }
+      return;
+    }
+
+    // Rule 4: Click outside closes all
+    if (window.activeDropdown && !window.activeDropdown.contains(e.target)) {
+      window.closeAllDropdowns();
+    }
+    
+    // Rule 6: Navigation closes all (real links inside menus)
+    const menuLink = e.target.closest('.astro-dropdown-menu a:not([href="javascript:void(0)"])');
+    if (menuLink) {
+      window.closeAllDropdowns();
+    }
+  });
+
+  // Rule 5: Escape closes all
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      window.closeAllDropdowns();
+    }
+  });
+
   // Fix: Bind mobile menu events AFTER the navbar is injected into the DOM
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -432,7 +497,89 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Handle Authentication State dynamically
+  if (typeof api !== 'undefined') {
+    api.get('/user/profile', { silent: true })
+      .then(response => {
+        if (response && response.user) {
+          const user = response.user;
+          const nameParts = user.name ? user.name.split(' ') : ['U'];
+          const initials = nameParts.length > 1 
+            ? (nameParts[0][0] + nameParts[nameParts.length - 1][0]).toUpperCase() 
+            : nameParts[0].substring(0, 2).toUpperCase();
+            
+          let avatarHtml = '';
+          if (user.profile_image) {
+            avatarHtml = `<img src="${user.profile_image}" alt="Profile" class="w-9 h-9 rounded-full object-cover border border-gray-200">`;
+          } else {
+            avatarHtml = `<div class="w-9 h-9 rounded-full bg-orange-100 text-astro-orange flex items-center justify-center font-bold border border-orange-200 text-sm">${initials}</div>`;
+          }
+
+          // Desktop Authenticated Dropdown
+          const desktopAuth = document.getElementById('desktop-auth-container');
+          if (desktopAuth) {
+            desktopAuth.innerHTML = `
+              <div class="astro-dropdown" tabindex="0">
+                <a href="javascript:void(0)" class="flex items-center text-gray-600 hover:text-astro-orange px-2 py-2 transition-colors outline-none rounded-full focus:ring-2 focus:ring-orange-500">
+                  ${avatarHtml}
+                </a>
+                <div class="astro-dropdown-menu" style="right: 0; left: auto; margin-top: 0.5rem;">
+                  <div class="py-1" role="menu" aria-orientation="vertical">
+                    <div class="px-4 py-2 text-xs text-gray-500 border-b border-gray-50 mb-1">Signed in as <br><span class="font-medium text-gray-800">${user.name}</span></div>
+                    <a href="/Dashboard/Dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Dashboard</a>
+                    <a href="/Dashboard/Profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">My Profile</a>
+                    <a href="/Dashboard/My-Consultations" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">My Consultations</a>
+                    <a href="/Dashboard/Wallet-and-Payments" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Wallet & Payments</a>
+                    <a href="/Dashboard/Favorites" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-astro-orange transition-colors">Favorites</a>
+                    <div class="border-t border-gray-100 my-1"></div>
+                    <a href="#" onclick="handleNavLogout(event)" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors">Logout</a>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+
+          // Mobile Authenticated Accordion
+          const mobileAuth = document.getElementById('mobile-auth-container');
+          if (mobileAuth) {
+            mobileAuth.innerHTML = `
+              <details class="mobile-accordion group mt-2 border-t border-gray-100 pt-2">
+                <summary class="flex justify-between items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-astro-orange hover:bg-gray-50 rounded-md cursor-pointer">
+                  <div class="flex items-center">
+                    ${avatarHtml.replace('w-9 h-9', 'w-8 h-8').replace('mr-0', 'mr-3')}
+                    <span class="ml-3">${user.name.split(' ')[0]}</span>
+                  </div>
+                  <svg class="chevron w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="pl-12 pb-2 space-y-1 bg-gray-50/50 rounded-b-md">
+                  <a href="/Dashboard/Dashboard" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Dashboard</a>
+                  <a href="/Dashboard/Profile" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">My Profile</a>
+                  <a href="/Dashboard/My-Consultations" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">My Consultations</a>
+                  <a href="/Dashboard/Wallet-and-Payments" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Wallet & Payments</a>
+                  <a href="/Dashboard/Favorites" class="block px-3 py-2 text-sm text-gray-600 hover:text-astro-orange">Favorites</a>
+                  <a href="#" onclick="handleNavLogout(event)" class="block px-3 py-2 text-sm text-red-600 hover:text-red-700 font-medium mt-1">Logout</a>
+                </div>
+              </details>
+            `;
+          }
+        }
+      })
+      .catch(err => {
+        // Silently fail, keep Login button
+      });
+  }
 });
+
+window.handleNavLogout = async function(e) {
+  e.preventDefault();
+  if (typeof api !== 'undefined') {
+    try {
+      await api.post('/auth/logout');
+    } catch (err) {}
+  }
+  window.location.href = '/index';
+};
 
 // Google Translate Integration (Invisible UI)
 const style = document.createElement('style');
@@ -459,7 +606,11 @@ const script = document.createElement('script');
 script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
 document.head.appendChild(script);
 
-window.setLang = function(langCode, langName) {
+window.setLang = async function(langCode, langName) {
+  if (typeof window.closeAllDropdowns === 'function') {
+    window.closeAllDropdowns();
+  }
+
   localStorage.setItem('astro_lang', langCode);
   localStorage.setItem('astro_lang_name', langName);
   
@@ -472,6 +623,16 @@ window.setLang = function(langCode, langName) {
   if (desk) desk.innerText = langName;
   const mob = document.getElementById('mobile-lang');
   if (mob) mob.value = langCode;
+  
+  // Persist to backend if API is available and user is authenticated
+  if (typeof api !== 'undefined') {
+    try {
+      await api.put('/settings/language', { language: langCode }, { silent: true });
+      if(window.showNotification) window.showNotification('Language updated successfully', 'success');
+    } catch (e) {
+      console.error('Could not save language to backend:', e);
+    }
+  }
 
   // Trigger translate on current page
   let select = document.querySelector('.goog-te-combo');
@@ -493,3 +654,75 @@ function initLanguage() {
   const mob = document.getElementById('mobile-lang');
   if (mob) mob.value = savedLang;
 }
+
+// ==========================================
+// CENTRALIZED NOTIFICATION SYSTEM
+// ==========================================
+
+window.showNotification = function(message, type = 'info') {
+  let container = document.getElementById('astrowjyoti-notifications');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'astrowjyoti-notifications';
+    container.className = 'fixed flex flex-col gap-3 pointer-events-none z-[9999]';
+    container.style.top = '24px';
+    container.style.left = '50%';
+    container.style.transform = 'translateX(-50%)';
+    container.style.width = '100%';
+    container.style.maxWidth = '450px';
+    container.style.zIndex = '9999';
+    document.body.appendChild(container);
+  }
+
+  const notification = document.createElement('div');
+  
+  let duration = 3000;
+  if (type === 'error') duration = 5000;
+  if (type === 'warning') duration = 4000;
+
+  const logoDarkColor = '#800000'; // Astrowjyoti logo maroon
+  const lightBgColor = '#fcf5f5'; // Very light maroon tint
+  
+  // Icon based on type, but colored in the logo's dark color as requested
+  let iconHtml = '';
+  if (type === 'success') {
+    iconHtml = `<svg class="w-5 h-5" style="color: ${logoDarkColor};" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
+  } else if (type === 'error') {
+    iconHtml = `<svg class="w-5 h-5" style="color: ${logoDarkColor};" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+  } else if (type === 'warning') {
+    iconHtml = `<svg class="w-5 h-5" style="color: ${logoDarkColor};" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>`;
+  } else {
+    iconHtml = `<svg class="w-5 h-5" style="color: ${logoDarkColor};" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+  }
+
+  notification.className = `flex items-center px-4 py-3 shadow-lg rounded-xl pointer-events-auto transform transition-all duration-300 translate-y-[-20px] opacity-0`;
+  notification.style.backgroundColor = lightBgColor;
+  notification.style.border = `1px solid ${logoDarkColor}`;
+  
+  notification.innerHTML = `
+    <div class="flex-shrink-0 mr-3 flex items-center justify-center rounded-full bg-white shadow-sm p-1" style="border: 1px solid ${logoDarkColor}20;">
+      ${iconHtml}
+    </div>
+    <div class="flex-1 mr-2 flex items-center">
+      <p class="text-[15px] font-bold break-words" style="color: ${logoDarkColor}; margin: 0;">${message}</p>
+    </div>
+    <button class="flex-shrink-0 focus:outline-none flex items-center transition-opacity hover:opacity-70" onclick="this.parentElement.remove()">
+      <svg class="w-4 h-4" style="color: ${logoDarkColor};" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+  `;
+
+  container.appendChild(notification);
+  
+  requestAnimationFrame(() => {
+    notification.classList.remove('translate-y-[-20px]', 'opacity-0');
+    notification.classList.add('translate-y-0', 'opacity-100');
+  });
+
+  setTimeout(() => {
+    notification.classList.remove('translate-y-0', 'opacity-100');
+    notification.classList.add('translate-x-full', 'opacity-0');
+    setTimeout(() => {
+      if (notification.parentElement) notification.remove();
+    }, 300);
+  }, duration);
+};

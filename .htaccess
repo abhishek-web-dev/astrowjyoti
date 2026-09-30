@@ -1,0 +1,42 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# -------------------------------------------------------------
+# 1. Redirect explicit .php requests to Clean URLs (Safely)
+# -------------------------------------------------------------
+# Only redirect if this is an external direct request, not an internal rewrite.
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_URI} \.php$
+RewriteRule ^(.*)\.php$ /$1 [R=301,L,QSA]
+
+# -------------------------------------------------------------
+# 2. Serve Compiled Tailwind CSS
+# -------------------------------------------------------------
+# Intercepts Vite's /src/style.css and serves the compiled root style.css
+RewriteRule ^src/style\.css$ style.css [L]
+
+# -------------------------------------------------------------
+# 3. Vite 'public' Folder Polyfill
+# -------------------------------------------------------------
+# If the requested file doesn't exist in the root, check if it exists in /public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/public/$1 -f
+RewriteRule ^(.*)$ public/$1 [L]
+
+# -------------------------------------------------------------
+# 4. Resolve clean URLs to .php files
+# -------------------------------------------------------------
+# If a clean URL is requested (e.g. /Auth/Login) and a .php exists, serve it
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule ^(.*)$ $1.php [L,QSA]
+
+# -------------------------------------------------------------
+# 5. Handle Root
+# -------------------------------------------------------------
+RewriteRule ^$ index.php [L,QSA]
+
+</IfModule>

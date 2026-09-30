@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Numerology - Astrojyoti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-[#FFFDF9] text-gray-900 font-sans antialiased overflow-x-hidden">
+
+  <!-- Navbar Component -->
+  <div class="app-navbar"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative w-full bg-[#FFFDF9] overflow-hidden flex flex-col justify-center" style="min-height: 540px;">
+      
+      <!-- Background Image -->
+      <div class="absolute inset-0 w-full h-full z-0">
+        <img src="/Numerology-banner.png" alt="Numerology Background"
+          class="w-full h-full object-cover object-right" onerror="this.src='/Hero-banner.png'"/>
+      </div>
+
+      <!-- Bottom Gradient Overlay for seamless blend with feature bar -->
+      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-0">
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 w-full pt-20 pb-16" style="width: 90%; margin: 0 auto; max-w: 1200px;">
+        <div class="w-full md:w-[80%] lg:w-[60%] pr-4 md:pr-10 lg:pr-16">
+
+          <!-- Breadcrumb -->
+          <nav class="flex text-gray-500 font-medium mb-6 md:mb-8" style="font-size: 14px;" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-2">
+              <li class="inline-flex items-center">
+                <a href="/" class="hover:text-orange-500 transition-colors">Home</a>
+              </li>
+              <li>
+                <div class="flex items-center">
+                  <svg class="w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m1 9 4-4-4-4" />
+                  </svg>
+                  <a href="#" class="ml-1 hover:text-orange-500 transition-colors">Free Services</a>
+                </div>
+              </li>
+              <li aria-current="page">
+                <div class="flex items-center">
+                  <svg class="w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m1 9 4-4-4-4" />
+                  </svg>
+                  <span class="ml-1 text-slate-800 font-bold">Numerology</span>
+                </div>
+              </li>
+            </ol>
+          </nav>
+
+          <!-- Pill badge -->
+          <div class="inline-block px-3.5 py-1 mb-5 border rounded-full bg-white/80 backdrop-blur-sm text-[11px] font-bold uppercase tracking-widest" style="border-color: #F2780C; color: #1E293B;">
+            NUMEROLOGY
+          </div>
+
+          <!-- Title -->
+          <h1 class="text-[34px] md:text-[44px] lg:text-[52px] font-bold text-[#1E293B] mb-4 leading-tight"
+            style="font-family: 'Playfair Display', serif;">
+            Discover the <span style="color: #F2780C;">Power</span><br>
+            of <span style="color: #F2780C;">Numbers</span>
+          </h1>
+
+          <!-- Description -->
+          <p class="text-[15px] md:text-[16px] leading-relaxed mb-8 max-w-lg font-semibold shadow-sm" style="color: #0F172A; text-shadow: 0 1px 2px rgba(255,255,255,0.8);">
+            Unlock the hidden meaning behind numbers and discover how they influence your personality, life path, career, relationships and future. Get personalised numerology insights for a happier and more successful life.
+          </p>
+
+          <!-- Button -->
+          <a href="#" class="inline-flex items-center justify-center font-bold py-3.5 px-8 rounded-full transition duration-300 text-[14px]" style="background-color: #FACC15; color: #1E293B;">
+            Get Your Numerology Report
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Bar -->
+    <section class="w-full bg-white/95 backdrop-blur-sm py-6 relative z-20" style="margin-top: -10px;">
+        <div style="width: 90%; margin: 0 auto; max-w: 1200px;">
+           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-6 lg:gap-0 lg:divide-x lg:divide-gray-100">
+              
+              <!-- Item 1 -->
+              <div class="flex items-start gap-3 lg:px-6 first:lg:pl-0">
+                 <div class="w-10 h-10 shrink-0 text-[#EA580C] flex items-center justify-center">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14c-1.5-1.5-2-2.5-2-3.5a2 2 0 114 0c0 1-.5 2-2 3.5z"></path></svg>
+                 </div>
+                 <div>
+                    <h4 class="font-bold text-[#1E293B] text-[14px] leading-tight mb-0.5">Accurate Analysis</h4>
+                    <p class="text-[12px] text-gray-500">Based on your birth details</p>
+                 </div>
+              </div>
+              
+              <!-- Item 2 -->
+              <div class="flex items-start gap-3 lg:px-6">
+                 <div class="w-10 h-10 shrink-0 text-[#EA580C] flex items-center justify-center">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                 </div>
+                 <div>
+                    <h4 class="font-bold text-[#1E293B] text-[14px] leading-tight mb-0.5">Personalised Insights</h4>
+                    <p class="text-[12px] text-gray-500">For career, love, health & more</p>
+                 </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="flex items-start gap-3 lg:px-6">
+                 <div class="w-10 h-10 shrink-0 text-[#EA580C] flex items-center justify-center">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                 </div>
+                 <div>
+                    <h4 class="font-bold text-[#1E293B] text-[14px] leading-tight mb-0.5">Easy & Instant Results</h4>
+                    <p class="text-[12px] text-gray-500">Get your report in minutes</p>
+                 </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="flex items-start gap-3 lg:px-6 pr-0">
+                 <div class="w-10 h-10 shrink-0 text-[#EA580C] flex items-center justify-center">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 11h8m-8 4h8"></path></svg>
+                 </div>
+                 <div>
+                    <h4 class="font-bold text-[#1E293B] text-[14px] leading-tight mb-0.5">100% Private & Secure</h4>
+                    <p class="text-[12px] text-gray-500">Your data is safe with us</p>
+                 </div>
+              </div>
+
+           </div>
+        </div>
+    </section>
+
+    <!-- Numerology Calculator & What is Numerology Section -->
+    <section class="w-full bg-[#FFFDF9] py-16 relative z-10">
+      <div style="width: 90%; margin: 0 auto; max-w: 1200px;">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          
+          <!-- Left Column: Calculator -->
+          <div class="bg-white rounded-[20px] p-8 lg:p-10 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col justify-center">
+            <h2 class="text-[28px] font-bold text-[#1E293B] mb-2" style="font-family: 'Playfair Display', serif;">Calculate Your Numerology Report</h2>
+            <p class="text-[15px] text-gray-500 mb-8 font-medium">Enter your details to discover your Life Path Number and personalised numerology report.</p>
+            
+            <form class="space-y-6">
+              <div>
+                <label class="block text-[14px] font-bold text-[#1E293B] mb-2">Full Name</label>
+                <input type="text" placeholder="Enter your full name" class="w-full px-4 py-3.5 rounded-[10px] border border-gray-200 focus:outline-none focus:border-[#EA580C] focus:ring-1 focus:ring-[#EA580C] transition-colors text-[14px] text-gray-700">
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-[14px] font-bold text-[#1E293B] mb-2">Date of Birth</label>
+                  <div class="relative">
+                    <input type="date" class="w-full px-4 py-3.5 rounded-[10px] border border-gray-200 focus:outline-none focus:border-[#EA580C] focus:ring-1 focus:ring-[#EA580C] transition-colors text-[14px] text-gray-700" placeholder="Select date">
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-[14px] font-bold text-[#1E293B] mb-2">Time of Birth (Optional)</label>
+                  <div class="relative">
+                    <input type="time" class="w-full px-4 py-3.5 rounded-[10px] border border-gray-200 focus:outline-none focus:border-[#EA580C] focus:ring-1 focus:ring-[#EA580C] transition-colors text-[14px] text-gray-700">
+                  </div>
+                </div>
+              </div>
+              
+              <button type="button" class="w-full bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold py-4 px-6 rounded-full transition duration-300 text-[15px] flex items-center justify-center mt-4">
+                Calculate My Numerology Report
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Right Column: What is Numerology -->
+          <div class="relative rounded-[20px] overflow-hidden flex flex-col justify-center p-8 lg:p-10 text-white min-h-[420px] shadow-lg">
+            <!-- Background Image -->
+            <img src="/what-is-Numerology.png" alt="What is Numerology" class="absolute inset-0 w-full h-full object-cover object-center z-0"/>
+            
+            <!-- Subtle Gradient Overlay for Text Readability on Mobile -->
+            <div class="absolute inset-0 bg-gradient-to-r from-[#1A0B2E]/90 via-[#1A0B2E]/50 to-transparent z-0 lg:hidden"></div>
+            
+            <!-- Content -->
+            <div class="relative z-10 max-w-md">
+              <h2 class="text-[32px] font-bold mb-4 leading-tight" style="font-family: 'Playfair Display', serif;">What is Numerology?</h2>
+              <p class="text-[15px] leading-relaxed mb-8 text-gray-100 font-medium text-shadow-sm">
+                Numerology is the ancient study of numbers and their influence on human life. Every number carries a unique vibration and meaning that can reveal important insights about your personality, strengths, challenges and future opportunities.
+              </p>
+              
+              <a href="#" class="inline-flex items-center justify-center font-bold py-3.5 px-6 rounded-full transition duration-300 text-[14px]" style="background-color: #FACC15; color: #1E293B;">
+                Learn More About Numerology
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- What You Can Discover Section -->
+    <section class="w-full bg-[#FFFDF9] py-16">
+      <div style="width: 90%; margin: 0 auto; max-w: 1200px;">
+        <div class="mb-10">
+          <h2 class="text-[32px] md:text-[36px] font-bold text-[#1E293B] mb-2" style="font-family: 'Playfair Display', serif;">What You Can Discover</h2>
+          <p class="text-[15px] text-gray-500 font-medium">Get in-depth insights into different aspects of your life through numerology.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          
+          <!-- Card 1: Life Path Number -->
+          <div class="rounded-[20px] p-5 flex items-center gap-4 bg-[#FFF9F2] transition-transform hover:-translate-y-1 cursor-pointer">
+            <div class="w-14 h-14 rounded-full bg-[#FFEDD5] text-[#EA580C] flex items-center justify-center text-2xl font-bold shrink-0">
+              1
+            </div>
+            <div>
+              <h3 class="font-bold text-[#1E293B] text-[15px] mb-1">Life Path Number</h3>
+              <p class="text-[13px] text-gray-500 leading-snug">Your purpose and life journey</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Destiny Number -->
+          <div class="rounded-[20px] p-5 flex items-center gap-4 bg-[#F8FAFC] transition-transform hover:-translate-y-1 cursor-pointer">
+            <div class="w-14 h-14 rounded-full bg-[#FFEDD5] text-[#EA580C] flex items-center justify-center text-2xl font-bold shrink-0">
+              2
+            </div>
+            <div>
+              <h3 class="font-bold text-[#1E293B] text-[15px] mb-1">Destiny Number</h3>
+              <p class="text-[13px] text-gray-500 leading-snug">Your goals and potential</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Personality Number -->
+          <div class="rounded-[20px] p-5 flex items-center gap-4 bg-[#F0FDF4] transition-transform hover:-translate-y-1 cursor-pointer">
+            <div class="w-14 h-14 rounded-full bg-[#DCFCE7] text-[#16A34A] flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#1E293B] text-[15px] mb-1">Personality Number</h3>
+              <p class="text-[13px] text-gray-500 leading-snug">How you present yourself</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Soul Urge Number -->
+          <div class="rounded-[20px] p-5 flex items-center gap-4 bg-[#FFF1F2] transition-transform hover:-translate-y-1 cursor-pointer">
+            <div class="w-14 h-14 rounded-full bg-[#FFE4E6] text-[#E11D48] flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#1E293B] text-[15px] mb-1">Soul Urge Number</h3>
+              <p class="text-[13px] text-gray-500 leading-snug">Your inner desires</p>
+            </div>
+          </div>
+
+          <!-- Card 5: Expression Number -->
+          <div class="rounded-[20px] p-5 flex items-center gap-4 bg-[#FDF4FF] transition-transform hover:-translate-y-1 cursor-pointer">
+            <div class="w-14 h-14 rounded-full bg-[#FFEDD5] text-[#EA580C] flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#1E293B] text-[15px] mb-1">Expression Number</h3>
+              <p class="text-[13px] text-gray-500 leading-snug">Your natural talents</p>
+            </div>
+          </div>
+
+          <!-- Card 6: Love & Relationship -->
+          <div class="rounded-[20px] p-5 flex items-center gap-4 bg-[#F5F3FF] transition-transform hover:-translate-y-1 cursor-pointer">
+            <div class="w-14 h-14 rounded-full bg-[#FFE4E6] text-[#E11D48] flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#1E293B] text-[15px] mb-1">Love & Relationship</h3>
+              <p class="text-[13px] text-gray-500 leading-snug">Compatibility insights</p>
+            </div>
+          </div>
+
+          <!-- Card 7: Career Guidance -->
+          <div class="rounded-[20px] p-5 flex items-center gap-4 bg-[#EFF6FF] transition-transform hover:-translate-y-1 cursor-pointer">
+            <div class="w-14 h-14 rounded-full bg-[#DBEAFE] text-[#2563EB] flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#1E293B] text-[15px] mb-1">Career Guidance</h3>
+              <p class="text-[13px] text-gray-500 leading-snug">Best career opportunities</p>
+            </div>
+          </div>
+
+          <!-- Card 8: Health & Wellness -->
+          <div class="rounded-[20px] p-5 flex items-center gap-4 bg-[#ECFDF5] transition-transform hover:-translate-y-1 cursor-pointer">
+            <div class="w-14 h-14 rounded-full bg-[#D1FAE5] text-[#059669] flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#1E293B] text-[15px] mb-1">Health & Wellness</h3>
+              <p class="text-[13px] text-gray-500 leading-snug">Understand your strengths</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Numbers Have a Story CTA Banner -->
+    <section class="w-full bg-[#FFFDF9] pb-16">
+      <div style="width: 90%; margin: 0 auto; max-w: 1200px;">
+        <div class="relative rounded-[24px] overflow-hidden flex flex-col justify-center text-white min-h-[280px] shadow-lg bg-[#1A0B2E]">
+          
+          <!-- Background Image -->
+          <img src="/numbers-have-story.png" alt="Numbers Have a Story" class="absolute inset-0 w-full h-full object-cover object-right z-0"/>
+          
+          <!-- Gradient Overlay to ensure text readability on all screen sizes -->
+          <div class="absolute inset-0 bg-gradient-to-r from-[#1A0B2E] via-[#1A0B2E]/90 to-transparent z-0 w-full md:w-[70%]"></div>
+          
+          <!-- Content -->
+          <div class="relative z-10 px-8 py-10 md:px-12 md:py-14 max-w-2xl">
+            <h2 class="text-[32px] md:text-[36px] font-bold mb-4 leading-tight text-white" style="font-family: 'Playfair Display', serif;">
+              Numbers Have a Story to Tell
+            </h2>
+            <p class="text-[15px] md:text-[16px] leading-relaxed mb-8 text-gray-200 font-medium">
+              Discover how the numbers in your birth date can reveal your life's purpose, strengths, and hidden opportunities.
+            </p>
+            
+            <a href="#" class="inline-flex items-center justify-center font-bold py-3.5 px-8 rounded-full transition duration-300 text-[15px]" style="background-color: #FACC15; color: #1E293B;">
+              Get Detailed Report
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Numerology for Each Number Section -->
+    <section class="w-full bg-[#FFFDF9] py-16 relative">
+      <div style="width: 95%; margin: 0 auto; max-w: 1400px;">
+        <div class="mb-10 text-left">
+          <h2 class="text-[32px] md:text-[36px] font-bold text-[#1E293B] mb-2" style="font-family: 'Playfair Display', serif;">Numerology for Each Number</h2>
+          <p class="text-[15px] text-gray-500 font-medium">Explore the meaning and characteristics of each numerology number.</p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-9 gap-4">
+          
+          <!-- Card 1 -->
+          <div class="bg-white rounded-[16px] p-5 lg:p-6 text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="relative w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+              <div class="absolute inset-0 bg-red-50 rounded-full"></div>
+              <span class="relative text-[36px] font-bold text-red-500" style="font-family: 'Playfair Display', serif;">1</span>
+            </div>
+            <div class="w-2 h-2 bg-red-500 mx-auto rotate-45 mb-4"></div>
+            <h4 class="font-bold text-[#1E293B] text-[14px] mb-2">Leadership</h4>
+            <p class="text-[12px] text-gray-500 leading-relaxed">Independent<br>Ambitious</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white rounded-[16px] p-5 lg:p-6 text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="relative w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+              <div class="absolute inset-0 bg-indigo-50 rounded-full"></div>
+              <span class="relative text-[36px] font-bold text-indigo-600" style="font-family: 'Playfair Display', serif;">2</span>
+            </div>
+            <div class="w-2 h-2 bg-indigo-600 mx-auto rotate-45 mb-4"></div>
+            <h4 class="font-bold text-[#1E293B] text-[14px] mb-2">Cooperation</h4>
+            <p class="text-[12px] text-gray-500 leading-relaxed">Sensitive<br>Diplomatic</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white rounded-[16px] p-5 lg:p-6 text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="relative w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+              <div class="absolute inset-0 bg-yellow-50 rounded-full"></div>
+              <span class="relative text-[36px] font-bold text-yellow-500" style="font-family: 'Playfair Display', serif;">3</span>
+            </div>
+            <div class="w-2 h-2 bg-yellow-500 mx-auto rotate-45 mb-4"></div>
+            <h4 class="font-bold text-[#1E293B] text-[14px] mb-2">Creativity</h4>
+            <p class="text-[12px] text-gray-500 leading-relaxed">Expressive<br>Optimistic</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white rounded-[16px] p-5 lg:p-6 text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="relative w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+              <div class="absolute inset-0 bg-green-50 rounded-full"></div>
+              <span class="relative text-[36px] font-bold text-green-600" style="font-family: 'Playfair Display', serif;">4</span>
+            </div>
+            <div class="w-2 h-2 bg-green-600 mx-auto rotate-45 mb-4"></div>
+            <h4 class="font-bold text-[#1E293B] text-[14px] mb-2">Stability</h4>
+            <p class="text-[12px] text-gray-500 leading-relaxed">Practical<br>Disciplined</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-white rounded-[16px] p-5 lg:p-6 text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="relative w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+              <div class="absolute inset-0 bg-blue-50 rounded-full"></div>
+              <span class="relative text-[36px] font-bold text-blue-600" style="font-family: 'Playfair Display', serif;">5</span>
+            </div>
+            <div class="w-2 h-2 bg-blue-600 mx-auto rotate-45 mb-4"></div>
+            <h4 class="font-bold text-[#1E293B] text-[14px] mb-2">Freedom</h4>
+            <p class="text-[12px] text-gray-500 leading-relaxed">Adventurous<br>Dynamic</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="bg-white rounded-[16px] p-5 lg:p-6 text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="relative w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+              <div class="absolute inset-0 bg-pink-50 rounded-full"></div>
+              <span class="relative text-[36px] font-bold text-pink-500" style="font-family: 'Playfair Display', serif;">6</span>
+            </div>
+            <div class="w-2 h-2 bg-pink-500 mx-auto rotate-45 mb-4"></div>
+            <h4 class="font-bold text-[#1E293B] text-[14px] mb-2">Harmony</h4>
+            <p class="text-[12px] text-gray-500 leading-relaxed">Caring<br>Responsible</p>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="bg-white rounded-[16px] p-5 lg:p-6 text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="relative w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+              <div class="absolute inset-0 bg-purple-50 rounded-full"></div>
+              <span class="relative text-[36px] font-bold text-purple-600" style="font-family: 'Playfair Display', serif;">7</span>
+            </div>
+            <div class="w-2 h-2 bg-purple-600 mx-auto rotate-45 mb-4"></div>
+            <h4 class="font-bold text-[#1E293B] text-[14px] mb-2">Spirituality</h4>
+            <p class="text-[12px] text-gray-500 leading-relaxed">Analytical<br>Intuitive</p>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="bg-white rounded-[16px] p-5 lg:p-6 text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="relative w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+              <div class="absolute inset-0 bg-orange-50 rounded-full"></div>
+              <span class="relative text-[36px] font-bold text-orange-500" style="font-family: 'Playfair Display', serif;">8</span>
+            </div>
+            <div class="w-2 h-2 bg-orange-500 mx-auto rotate-45 mb-4"></div>
+            <h4 class="font-bold text-[#1E293B] text-[14px] mb-2">Success</h4>
+            <p class="text-[12px] text-gray-500 leading-relaxed">Powerful<br>Goal-oriented</p>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="bg-white rounded-[16px] p-5 lg:p-6 text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="relative w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+              <div class="absolute inset-0 bg-red-50 rounded-full"></div>
+              <span class="relative text-[36px] font-bold text-red-600" style="font-family: 'Playfair Display', serif;">9</span>
+            </div>
+            <div class="w-2 h-2 bg-red-600 mx-auto rotate-45 mb-4"></div>
+            <h4 class="font-bold text-[#1E293B] text-[14px] mb-2">Compassion</h4>
+            <p class="text-[12px] text-gray-500 leading-relaxed">Humanitarian<br>Wise</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Numerology is Important Section -->
+    <section class="w-full bg-[#FFFDF9] py-12 md:py-16">
+      <div style="width: 90%; margin: 0 auto; max-w: 1200px;">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          
+          <!-- Left Content -->
+          <div class="bg-white rounded-[24px] p-8 md:p-12 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100">
+            <h2 class="text-[28px] md:text-[34px] font-bold text-[#1E293B] mb-4 leading-tight" style="font-family: 'Playfair Display', serif;">
+              Why Numerology is Important?
+            </h2>
+            <p class="text-[15px] text-gray-600 leading-relaxed mb-8">
+              Numbers are not just digits, they are vibrations that influence every aspect of your life. Numerology helps you understand your strengths, overcome challenges and make better decisions in love, career, health and relationships.
+            </p>
+            
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-[#EA580C] text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <span class="text-[15px] text-[#1E293B] font-bold">Helps you understand your true self</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-[#EA580C] text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <span class="text-[15px] text-[#1E293B] font-bold">Guides you towards the right career path</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-[#EA580C] text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <span class="text-[15px] text-[#1E293B] font-bold">Improves your relationships</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-[#EA580C] text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <span class="text-[15px] text-[#1E293B] font-bold">Reveals opportunities and timing</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-[#EA580C] text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <span class="text-[15px] text-[#1E293B] font-bold">Brings clarity and positive direction to life</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Right Image -->
+          <div class="relative w-full h-full min-h-[300px] lg:min-h-[450px]">
+            <img src="/your-numbers-your-path.png" alt="Your Numbers Your Path Your Potential" class="w-full h-full object-cover rounded-[24px] shadow-lg"/>
+            
+            <!-- Overlay Text -->
+            <div class="absolute top-6 right-6 md:top-10 md:right-10 text-right z-10">
+              <h3 class="text-[26px] md:text-[32px] lg:text-[36px] font-bold text-white leading-snug drop-shadow-md" style="font-family: 'Playfair Display', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                Your Numbers<br>
+                Your Path<br>
+                Your Potential
+              </h3>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation & Tools Section -->
+    <section class="w-full bg-[#FFFDF9] pb-16">
+      <div style="width: 90%; margin: 0 auto; max-w: 1200px;">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+          
+          <!-- Left: Banner (spans 2 columns on lg) -->
+          <div class="lg:col-span-2 relative rounded-[24px] overflow-hidden flex flex-col justify-center text-white min-h-[300px] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] bg-[#1A0B2E]">
+            <!-- Background Image -->
+            <img src="/numerology-number.png" alt="Numerology Consultation" class="absolute inset-0 w-full h-full object-cover object-right z-0"/>
+            
+            <!-- Gradient Overlay for Text Readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-[#1A0B2E] via-[#1A0B2E]/90 to-transparent z-0 w-full md:w-[70%]"></div>
+            
+            <!-- Content -->
+            <div class="relative z-10 px-8 py-8 md:px-10 md:py-10 max-w-lg">
+              <h2 class="text-[26px] md:text-[30px] font-bold mb-3 leading-tight text-white" style="font-family: 'Playfair Display', serif;">
+                Personalised Numerology Consultation
+              </h2>
+              <p class="text-[14px] md:text-[15px] leading-relaxed mb-8 text-gray-200 font-medium">
+                Get detailed insights from our expert numerologists and understand how numbers can shape your future.
+              </p>
+              
+              <a href="#" class="inline-flex items-center justify-center font-bold py-3.5 px-6 rounded-full transition duration-300 text-[14px]" style="background-color: #FACC15; color: #1E293B;">
+                Talk to a Numerology Expert
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Right: Tools Card -->
+          <div class="bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col h-full">
+            <h3 class="text-[20px] font-bold text-[#1E293B] mb-2" style="font-family: 'Playfair Display', serif;">Numerology Tools</h3>
+            
+            <div class="flex-grow flex flex-col mt-2">
+              <a href="#" class="group flex items-center justify-between py-3.5 border-b border-gray-100 last:border-0 hover:text-[#EA580C] transition-colors">
+                <span class="text-[14px] text-[#1E293B] font-bold group-hover:text-[#EA580C]">Life Path Number Calculator</span>
+                <svg class="w-4 h-4 text-[#1E293B] group-hover:text-[#EA580C] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+              <a href="#" class="group flex items-center justify-between py-3.5 border-b border-gray-100 last:border-0 hover:text-[#EA580C] transition-colors">
+                <span class="text-[14px] text-[#1E293B] font-bold group-hover:text-[#EA580C]">Name Numerology Calculator</span>
+                <svg class="w-4 h-4 text-[#1E293B] group-hover:text-[#EA580C] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+              <a href="#" class="group flex items-center justify-between py-3.5 border-b border-gray-100 last:border-0 hover:text-[#EA580C] transition-colors">
+                <span class="text-[14px] text-[#1E293B] font-bold group-hover:text-[#EA580C]">Marriage Compatibility</span>
+                <svg class="w-4 h-4 text-[#1E293B] group-hover:text-[#EA580C] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+              <a href="#" class="group flex items-center justify-between py-3.5 border-b border-gray-100 last:border-0 hover:text-[#EA580C] transition-colors">
+                <span class="text-[14px] text-[#1E293B] font-bold group-hover:text-[#EA580C]">Lucky Numbers Finder</span>
+                <svg class="w-4 h-4 text-[#1E293B] group-hover:text-[#EA580C] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+              <a href="#" class="group flex items-center justify-between py-3.5 border-b border-gray-100 last:border-0 hover:text-[#EA580C] transition-colors">
+                <span class="text-[14px] text-[#1E293B] font-bold group-hover:text-[#EA580C]">Favourable Dates</span>
+                <svg class="w-4 h-4 text-[#1E293B] group-hover:text-[#EA580C] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+              <a href="#" class="group flex items-center justify-between py-3.5 border-b border-gray-100 last:border-0 hover:text-[#EA580C] transition-colors">
+                <span class="text-[14px] text-[#1E293B] font-bold group-hover:text-[#EA580C]">Personalised Numerology Report</span>
+                <svg class="w-4 h-4 text-[#1E293B] group-hover:text-[#EA580C] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- You May Also Like Section -->
+    <section class="w-full bg-[#FFFDF9] pb-16">
+      <div style="width: 90%; margin: 0 auto; max-w: 1200px;">
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+          <h2 class="text-[28px] md:text-[32px] font-bold text-[#1E293B]" style="font-family: 'Playfair Display', serif;">You May Also Like</h2>
+          <a href="#" class="inline-flex items-center justify-center font-bold py-2.5 px-6 rounded-full transition duration-300 text-[14px] border border-[#EA580C] text-[#EA580C] hover:bg-[#EA580C] hover:text-white">
+            View All Articles
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="bg-white rounded-[20px] p-3 shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05)] transition-all group">
+            <div class="w-full aspect-video rounded-[12px] overflow-hidden mb-4 relative">
+              <img src="/article1.png" alt="Article Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+            </div>
+            <div class="px-1 flex-grow flex flex-col">
+              <h3 class="font-bold text-[#1E293B] text-[16px] leading-snug mb-5">How Your Life Path Number Shapes Your Destiny</h3>
+              
+              <div class="mt-auto flex items-center justify-between pb-1">
+                <div class="flex items-center gap-2">
+                  <img src="/acharya.png" alt="Astro Team" class="w-6 h-6 rounded-full object-cover bg-orange-100"/>
+                  <span class="text-[12px] text-gray-500 font-medium">Astro Team | 20 Sep, 2026</span>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-[#FACC15] text-[#1E293B] flex items-center justify-center shrink-0 shadow-sm transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="bg-white rounded-[20px] p-3 shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05)] transition-all group">
+            <div class="w-full aspect-video rounded-[12px] overflow-hidden mb-4 relative">
+              <img src="/article2.png" alt="Article Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+            </div>
+            <div class="px-1 flex-grow flex flex-col">
+              <h3 class="font-bold text-[#1E293B] text-[16px] leading-snug mb-5">Numerology for Career Growth and Success</h3>
+              
+              <div class="mt-auto flex items-center justify-between pb-1">
+                <div class="flex items-center gap-2">
+                  <img src="/acharya.png" alt="Astro Team" class="w-6 h-6 rounded-full object-cover bg-orange-100"/>
+                  <span class="text-[12px] text-gray-500 font-medium">Astro Team | 18 Sep, 2026</span>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-[#FACC15] text-[#1E293B] flex items-center justify-center shrink-0 shadow-sm transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white rounded-[20px] p-3 shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05)] transition-all group">
+            <div class="w-full aspect-video rounded-[12px] overflow-hidden mb-4 relative">
+              <img src="/article3.png" alt="Article Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+            </div>
+            <div class="px-1 flex-grow flex flex-col">
+              <h3 class="font-bold text-[#1E293B] text-[16px] leading-snug mb-5">Lucky Numbers: How They Can Change Your Life</h3>
+              
+              <div class="mt-auto flex items-center justify-between pb-1">
+                <div class="flex items-center gap-2">
+                  <img src="/acharya.png" alt="Astro Team" class="w-6 h-6 rounded-full object-cover bg-orange-100"/>
+                  <span class="text-[12px] text-gray-500 font-medium">Astro Team | 15 Sep, 2026</span>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-[#FACC15] text-[#1E293B] flex items-center justify-center shrink-0 shadow-sm transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white rounded-[20px] p-3 shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05)] transition-all group">
+            <div class="w-full aspect-video rounded-[12px] overflow-hidden mb-4 relative">
+              <img src="/article1.png" alt="Article Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+            </div>
+            <div class="px-1 flex-grow flex flex-col">
+              <h3 class="font-bold text-[#1E293B] text-[16px] leading-snug mb-5">Numerology Compatibility in Relationships</h3>
+              
+              <div class="mt-auto flex items-center justify-between pb-1">
+                <div class="flex items-center gap-2">
+                  <img src="/acharya.png" alt="Astro Team" class="w-6 h-6 rounded-full object-cover bg-orange-100"/>
+                  <span class="text-[12px] text-gray-500 font-medium">Astro Team | 12 Sep, 2026</span>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-[#FACC15] text-[#1E293B] flex items-center justify-center shrink-0 shadow-sm transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="w-full bg-[#FFFDF9] pb-16">
+      <div style="width: 90%; margin: 0 auto; max-w: 1200px;">
+        <h2 class="text-[28px] md:text-[32px] font-bold text-[#1E293B] mb-6" style="font-family: 'Playfair Display', serif;">
+          Frequently Asked Questions
+        </h2>
+        
+        <div class="flex flex-col space-y-3">
+          
+          <!-- FAQ 1 -->
+          <div class="bg-white border border-gray-100 rounded-[12px] overflow-hidden shadow-sm hover:shadow-md transition">
+            <button class="w-full flex items-center justify-between p-4 md:p-5 text-left faq-button" aria-expanded="false">
+              <span class="font-semibold text-[15px] md:text-[16px] text-[#1E293B]">What is numerology?</span>
+              <div class="text-[#EA580C] shrink-0 faq-icon transition-transform duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+            </button>
+            <div class="faq-content hidden px-4 md:px-5 pb-4 md:pb-5 text-gray-500 text-[14px] leading-relaxed">
+              Numerology is the ancient study of numbers and their mystical relationship to your life, character, and destiny. It helps uncover hidden patterns in your personality and life path.
+            </div>
+          </div>
+          
+          <!-- FAQ 2 -->
+          <div class="bg-white border border-gray-100 rounded-[12px] overflow-hidden shadow-sm hover:shadow-md transition">
+            <button class="w-full flex items-center justify-between p-4 md:p-5 text-left faq-button" aria-expanded="false">
+              <span class="font-semibold text-[15px] md:text-[16px] text-[#1E293B]">How is the numerology number calculated?</span>
+              <div class="text-[#EA580C] shrink-0 faq-icon transition-transform duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+            </button>
+            <div class="faq-content hidden px-4 md:px-5 pb-4 md:pb-5 text-gray-500 text-[14px] leading-relaxed">
+              Numerology numbers are primarily calculated using your exact birth date and the numerical value assigned to the letters in your full birth name.
+            </div>
+          </div>
+          
+          <!-- FAQ 3 -->
+          <div class="bg-white border border-gray-100 rounded-[12px] overflow-hidden shadow-sm hover:shadow-md transition">
+            <button class="w-full flex items-center justify-between p-4 md:p-5 text-left faq-button" aria-expanded="false">
+              <span class="font-semibold text-[15px] md:text-[16px] text-[#1E293B]">Can numerology really predict my future?</span>
+              <div class="text-[#EA580C] shrink-0 faq-icon transition-transform duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+            </button>
+            <div class="faq-content hidden px-4 md:px-5 pb-4 md:pb-5 text-gray-500 text-[14px] leading-relaxed">
+              While numerology doesn't predict the future with absolute certainty, it provides profound insights into upcoming opportunities, challenges, and cycles in your life.
+            </div>
+          </div>
+          
+          <!-- FAQ 4 -->
+          <div class="bg-white border border-gray-100 rounded-[12px] overflow-hidden shadow-sm hover:shadow-md transition">
+            <button class="w-full flex items-center justify-between p-4 md:p-5 text-left faq-button" aria-expanded="false">
+              <span class="font-semibold text-[15px] md:text-[16px] text-[#1E293B]">What is the most powerful number in numerology?</span>
+              <div class="text-[#EA580C] shrink-0 faq-icon transition-transform duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+            </button>
+            <div class="faq-content hidden px-4 md:px-5 pb-4 md:pb-5 text-gray-500 text-[14px] leading-relaxed">
+              In numerology, the master numbers 11, 22, and 33 are considered the most powerful, carrying higher frequencies of spiritual and practical potential.
+            </div>
+          </div>
+          
+          <!-- FAQ 5 -->
+          <div class="bg-white border border-gray-100 rounded-[12px] overflow-hidden shadow-sm hover:shadow-md transition">
+            <button class="w-full flex items-center justify-between p-4 md:p-5 text-left faq-button" aria-expanded="false">
+              <span class="font-semibold text-[15px] md:text-[16px] text-[#1E293B]">How accurate is numerology?</span>
+              <div class="text-[#EA580C] shrink-0 faq-icon transition-transform duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+            </button>
+            <div class="faq-content hidden px-4 md:px-5 pb-4 md:pb-5 text-gray-500 text-[14px] leading-relaxed">
+              Many find numerology astonishingly accurate in describing their personality traits and life events, especially when interpreted by an expert numerologist.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FAQ Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqButtons = document.querySelectorAll('.faq-button');
+      
+      faqButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const content = button.nextElementSibling;
+          const icon = button.querySelector('.faq-icon');
+          const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+          // Close all other FAQs
+          document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+          document.querySelectorAll('.faq-button').forEach(b => {
+            b.setAttribute('aria-expanded', 'false');
+            const bIcon = b.querySelector('.faq-icon');
+            if (bIcon) bIcon.style.transform = 'rotate(0deg)';
+          });
+
+          // Toggle current FAQ
+          if (!isExpanded) {
+            content.classList.remove('hidden');
+            button.setAttribute('aria-expanded', 'true');
+            if (icon) icon.style.transform = 'rotate(45deg)';
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Footer Component -->
+  <div class="app-footer"></div>
+
+  <!-- Component Script -->
+  <script src="/js/api.js"></script>
+  <script src="/js/component.js"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
